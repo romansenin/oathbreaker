@@ -16,7 +16,9 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/Project3DB", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Project3DB", {
+  useNewUrlParser: true
+});
 
 // Use apiRoutes
 app.use("/api", apiRoutes);
