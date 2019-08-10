@@ -1,0 +1,18 @@
+.char-box{
+    border: solid 2px black;
+    height: 500px;
+}
+
+.char-box p{
+    margin: 0px auto;
+}
+
+.img-container{
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+
+.img-container img{
+    height: 100%;
+}
