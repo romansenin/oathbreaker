@@ -1,11 +1,42 @@
 import React, { Component } from "react";
 
+import Character from "../../components/Character";
+
+import characters from "../../characters.json";
+
 export default class CharacterSelection extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+
+  renderCharacters() {
+    return (
+      <ul>
+        {characters.map((value, index) => {
+          return (
+            <Character
+              key={index}
+              name={value.name}
+              image={value.image}
+              health={value.health}
+              attack={value.attack}
+              defense={value.defense}
+              agility={value.agility}
+
+            />
+          );
+        })}
+      </ul>
+    );
+  }
+
   render() {
-    return <h1>CharacterSelection</h1>;
+    return (
+      <div className="character-selection">
+        <h1>CharacterSelection</h1>
+        {this.renderCharacters()}
+      </div>
+    );
   }
 }
