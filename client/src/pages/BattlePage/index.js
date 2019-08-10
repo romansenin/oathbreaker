@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 //Development source for characters
 import characters from '../../characters.json';
-import Character from '../../components/Character';
+import Fighter from '../../components/Fighter';
 
 export default class BattlePage extends Component {
   constructor(props) {
@@ -59,7 +59,7 @@ export default class BattlePage extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-6 text-center">
-            <Character name={characters[0].name}
+            <Fighter name={characters[0].name}
               key={characters[0].id}
               id={characters[0].id}
               image={characters[0].image}
@@ -71,7 +71,7 @@ export default class BattlePage extends Component {
               handleAttack={this.handleAttack}/>
             </div>
             <div className="col-md-6 text-center">
-            <Character name={characters[1].name}
+            <Fighter name={characters[1].name}
               key={characters[1].id}
               id={characters[1].id}
               image={characters[1].image}
