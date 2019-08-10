@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import "./Login.css";
+
+import Heading from "../../components/Heading";
+import Form from "../../components/Form";
 
 export default class LoginPage extends Component {
   constructor(props) {
@@ -6,6 +10,11 @@ export default class LoginPage extends Component {
     this.state = {};
   }
   render() {
-    return <h1>LoginPage</h1>;
+    return (
+      <div className="login-container">
+        <Heading />
+        <Form />
+      </div>
+    );
   }
 }
