@@ -1,0 +1,46 @@
+.heading-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+.form-container form h1 {
+  text-align: center;
+  font-size: 150%;
+}
+
+.form-container form input {
+  margin-bottom: 5px;
+}
+
+.form-container form .main {
+  display: flex;
+  justify-content: center;
+}
+
+.form-container .local-login,
+.form-container .social-media {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.form-container form .social-media {
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
