@@ -2,7 +2,9 @@ import React from "react";
 
 const Title = () => {
   return (
-    <h1>Title</h1>
+    <div className="title-container">
+      <h1>Oath Breaker</h1>
+    </div>
   );
 };
 
