@@ -11,9 +11,11 @@ export default class LoginPage extends Component {
   }
   render() {
     return (
-      <div className="login-container">
-        <Heading />
-        <Form />
+      <div className="login-wrapper">
+        <div className="login-container">
+          <Heading />
+          <Form />
+        </div>
       </div>
     );
   }

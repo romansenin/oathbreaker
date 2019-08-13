@@ -1,31 +1,54 @@
+.login-wrapper {
+  min-height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+    url(../../images/landing-page.jpg);
+  background-size: cover;
+}
+
+.login-container {
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Roboto', sans-serif;
+}
+
+.heading-container h1 {
+  font-size: 230%;
+  margin-right: 10px;
+  color: #fff;
+}
+
 .heading-container {
   display: flex;
   justify-content: center;
 }
 
 .form-container form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 70%;
   margin: 0 auto;
-  background-color: #f4f4f4;
+  background-color: #fff;
   border-radius: 3px;
-  padding: 20px;
+  padding: 10px 30px 45px;
 }
 
 .form-container form h1 {
   text-align: center;
-  font-size: 150%;
-}
-
-.form-container form input {
-  margin-bottom: 5px;
+  font-size: 140%;
+  padding: 15px 0;
 }
 
 .form-container form .main {
   display: flex;
   justify-content: center;
+}
+
+.form-container form button {
+  background-color: rgb(37, 114, 247);
+  color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 2px #dfdfdf;
 }
 
 .form-container .local-login,
@@ -40,11 +63,45 @@
   align-items: center;
 }
 
-input[type="checkbox"] {
-  margin-right: 10px;
+.form-container .local-login {
+  border-right: 1px solid rgb(171, 171, 171);
+  padding-right: 20px;
 }
 
-.form-container .local-login {
-  border-right: 1px solid #000;
-  padding-right: 20px;
+.keep-logged-in {
+  font-size: 90%;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.form-container form input[type="email"] {
+  margin-bottom: 10px;
+}
+
+.form-container form input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.form-container form input::placeholder {
+  font-style: italic;
+  font-size: 90%;
+  padding-left: 8px;
+  content: none;
+}
+
+.keep-logged-in label {
+  margin: 0;
+}
+
+.keep-logged-in a {
+  flex: 1;
+  text-align: right;
+}
+
+.social-media a {
+  background-color: #f4f4f4;
+  width: 80%;
+  text-align: center;
+  margin-bottom: 5px;
 }
