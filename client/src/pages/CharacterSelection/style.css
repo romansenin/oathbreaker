@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "redivivaregular";
+  src: url("rediviva-webfont.woff2") format("woff2"),
+    url("rediviva-webfont.woff") format("woff");
+}
+
+.character-selection h1 {
+  text-align: center;
+  font-family: "redivivaregular";
+  font-size: 90px;
+  letter-spacing: 0.3cm;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
