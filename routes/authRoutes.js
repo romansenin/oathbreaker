@@ -1,28 +1,33 @@
 const passport = require("passport");
+const axios = require("axios");
+const router = require("express").Router();
 
-module.exports = function(app) {
-  // auth logout
-  app.get("/auth/logout", (req, res) => {
-    req.logout();
-    res.redirect("/");
-  });
+// auth logout
+router.get("/auth/logout", (req, res) => {
+  req.logout();
+  res.redirect("/");
+});
 
-  // auth with google
-  app.get(
-    "/auth/google",
-    () => {console.log("in here")},
-    passport.authenticate("google", {
-      scope: ["profile"],
-      prompt: "select_account"
-    })
-  );
+router.get("/auth/test", (req, res) => {
+  res.send("hi");
+});
 
-  // callback route for google to redirect to
-  app.get(
-    "/auth/google/redirect",
-    passport.authenticate("google"),
-    (req, res) => {
-      res.redirect("/chooseAllegiance");
-    }
-  );
-};
+// auth with google
+router.get(
+  "/auth/google",
+  passport.authenticate("google", {
+    scope: ["profile"],
+    prompt: "select_account"
+  })
+);
+
+// callback route for google to redirect to
+router.get(
+  "/auth/google/redirect",
+  passport.authenticate("google"),
+  (req, res) => {
+    res.redirect("/chooseAllegiance");
+  }
+);
+
+module.exports = router;

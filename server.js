@@ -10,16 +10,16 @@ const app = express();
 const mongoose = require("mongoose");
 
 // Routes
-// const authRoutes = require("./routes/authRoutes");
+const authRoutes = require("./routes/authRoutes");
 const apiRoutes = require("./routes/apiRoutes");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
+// if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-}
+// }
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Project3DB", {
@@ -28,6 +28,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Project3DB", {
 
 // Use the routes
 app.use(apiRoutes);
+app.use(authRoutes);
 
 // Send every other request to the React app
 // Define any API routes before this runs
