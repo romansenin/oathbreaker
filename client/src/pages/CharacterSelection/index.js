@@ -4,6 +4,9 @@ import Character from "../../components/Character";
 
 import characters from "../../characters.json";
 
+import './style.css';
+
+
 export default class CharacterSelection extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +37,7 @@ export default class CharacterSelection extends Component {
   render() {
     return (
       <div className="character-selection">
-        <h1>CharacterSelection</h1>
+        <h1>Characters</h1>
         {this.renderCharacters()}
       </div>
     );
