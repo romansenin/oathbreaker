@@ -5,7 +5,7 @@ const db = require("../client/models");
 
 const googleRedirect = process.env.PORT
   ? "/auth/google/redirect"
-  : "http://localhost:3000/auth/google/redirect";
+  : "http://localhost:3001/auth/google/redirect";
 
 passport.serializeUser((user, done) => {
   done(null, user._id);

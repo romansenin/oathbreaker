@@ -1,15 +1,10 @@
 const passport = require("passport");
-const axios = require("axios");
 const router = require("express").Router();
 
 // auth logout
 router.get("/auth/logout", (req, res) => {
   req.logout();
   res.redirect("/");
-});
-
-router.get("/auth/test", (req, res) => {
-  res.send("hi");
 });
 
 // auth with google
