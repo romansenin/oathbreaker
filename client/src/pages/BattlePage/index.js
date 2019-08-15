@@ -2,6 +2,7 @@ import React, { Component } from "react";
 //Development source for characters
 import characters from '../../characters.json';
 import Fighter from '../../components/Fighter';
+import './style.css';
 
 export default class BattlePage extends Component {
   constructor(props) {
@@ -44,6 +45,9 @@ export default class BattlePage extends Component {
           }
         }
       }
+    } else {
+      alert("Battle over!");
+      window.location.pathname = "/selectcharacter";
     }
 
 
@@ -56,7 +60,7 @@ export default class BattlePage extends Component {
     return (
       <>
         <h1>BattlePage</h1>
-        <div className="container">
+        <div id="battle-bg" className="container">
           <div className="row">
             <div className="col-md-6 text-center">
             <Fighter name={characters[0].name}
