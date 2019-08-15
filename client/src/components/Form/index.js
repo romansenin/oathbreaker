@@ -26,14 +26,14 @@ const Form = () => {
               <label htmlFor="keepLoggedIn">
                 Keep me logged in for 30 days
               </label>
-              <a href="">Forgot password?</a>
+              {/* <a href="">Forgot password?</a> */}
             </div>
             <button type="submit">Log In</button>
           </div>
           <div className="social-media">
-            <a href="#">Google</a>
-            <a href="#">Facebook</a>
-            <a href="#">Github</a>
+            <a href="/auth/google">Google</a>
+            {/* <a href="#">Facebook</a> */}
+            {/* <a href="#">Github</a> */}
           </div>
         </div>
       </form>

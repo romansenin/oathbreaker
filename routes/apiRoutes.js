@@ -2,7 +2,7 @@ const axios = require("axios");
 const router = require("express").Router();
 const db = require("../client/models");
 
-router.get("/searchBooks", (req, res) => {
+router.get("/search", (req, res) => {
   axios
     .get(
       "https://www.googleapis.com/books/v1/volumes?q=" +
@@ -10,6 +10,7 @@ router.get("/searchBooks", (req, res) => {
         "&printType=books"
     )
     .then(results => {
+      console.log("hi");
       res.json(results.data);
     })
     .catch(err => {
@@ -17,7 +18,7 @@ router.get("/searchBooks", (req, res) => {
     });
 });
 
-router.get("/getBooks", (req, res) => {
+router.get("/book", (req, res) => {
   db.Book.find({})
     .then(dbBook => {
       res.json(dbBook);
@@ -25,11 +26,21 @@ router.get("/getBooks", (req, res) => {
     .catch(err => res.sendStatus(500));
 });
 
-router.post("/saveBook", (req, res) => {
+router.post("/book", (req, res) => {
   db.Book.create(req.body.data)
-    .then(function(dbBook) {
-      // View the added result in the console
-      console.log(dbBook);
+    .then(function() {
+      res.sendStatus(200).end();
+    })
+    .catch(function(err) {
+      // If an error occurred, log it
+      console.log(err);
+      res.sendStatus(500).end();
+    });
+});
+
+router.delete("/book/:id", (req, res) => {
+  db.Book.remove({ _id: req.params.id })
+    .then(() => {
       res.sendStatus(200).end();
     })
     .catch(function(err) {

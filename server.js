@@ -1,10 +1,16 @@
 require("dotenv").config();
 
+// Load passport configurations
+require("./config/passport-setup");
+
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
+
+// Routes
+// const authRoutes = require("./routes/authRoutes");
 const apiRoutes = require("./routes/apiRoutes");
 
 // Define middleware here
@@ -20,14 +26,14 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Project3DB", {
   useNewUrlParser: true
 });
 
-// Use apiRoutes
-app.use("/api", apiRoutes);
+// Use the routes
+app.use(apiRoutes);
 
 // Send every other request to the React app
 // Define any API routes before this runs
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
