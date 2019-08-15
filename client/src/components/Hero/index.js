@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "./style.css";
+import React from 'react';
+import './style.css';
 
 const Fog = () => {
   return (
