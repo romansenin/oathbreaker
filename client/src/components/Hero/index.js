@@ -1,5 +1,5 @@
-import React from 'react';
-import './style.css';
+import React from "react";
+import "./style.css";
 
 const Fog = () => {
   return (
@@ -12,6 +12,10 @@ const Fog = () => {
 
         <div class="title">
           <h1>OathBreaker</h1>
+          <button class="btn btn--border">
+            Join The Fight
+            <span />
+          </button>
         </div>
       </section>
     </div>
