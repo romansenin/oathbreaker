@@ -12,16 +12,8 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((userId, done) => {
-  // db.User.find({ _id: userId })
-  //   .then(user => {
-  //     let userData = user.get({ plain: true });
-  //     done(null, userData);
-  //   })
-  //   .catch(err => {
-  //     done(err);
-  //   });
   db.User.findOne({ _id: userId }, function(err, user) {
-    console.log(user);
+    if (err) console.error(err);
     done(null, user);
   });
 });
@@ -36,21 +28,14 @@ passport.use(
     },
     (accessToken, refreshToken, profile, done) => {
       // passport callback function
-      // db.User.findOrCreate({
-      //   where: { gid: profile.id, gname: profile.displayName }
-      // }).then(([user, created]) => {
-      //   let userData = user.get({ plain: true });
-      //   console.log(userData);
-      //   console.log("created:", created);
-      //   return done(null, userData);
-      // });
-      db.User.findOne(
-        { googleId: profile.id, googleName: profile.displayName },
-        "_id",
-        { upsert: true },
-        function(err, user) {
-          console.log(user);
-          return done(null, user);
+
+      db.User.findOneAndUpdate(
+        { googleId: profile.id },
+        { $setOnInsert: { googleName: profile.displayName } },
+        { new: true, upsert: true, returnNewDocument: true },
+        (err, doc) => {
+          if (err) console.error(err);
+          return done(null, doc);
         }
       );
     }
