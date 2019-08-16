@@ -79,3 +79,124 @@ body {
     transform: translate3d(-200vw, 0, 0);
   }
 }
+
+/* The Styling for the join button */
+
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+body {
+  text-align: center;
+}
+
+.btn {
+  padding: 20px 30px;
+  font-size: 40px;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid white;
+  outline: none;
+  color: white;
+  background-color: transparent;
+  margin: 40px;
+  font-family: "Merriweather", serif;
+  white-space: nowrap;
+}
+.btn--border::after,
+.btn--border::before,
+.btn--border span::after,
+.btn--border span::before {
+  content: "";
+  position: absolute;
+  background-color: white;
+  transition: 0.5s ease;
+}
+.btn--border::after,
+.btn--border::before {
+  height: 100%;
+  width: 2px;
+  top: -2px;
+}
+.btn--border::after {
+  left: -2px;
+}
+.btn--border::before {
+  right: -2px;
+}
+.btn--border span::after,
+.btn--border span::before {
+  height: 2px;
+  width: 100%;
+  left: -2px;
+}
+.btn--border span::after {
+  top: -2px;
+}
+.btn--border span::before {
+  bottom: -2px;
+}
+.btn--border:hover:after {
+  transform: translatex(-12px);
+}
+.btn--border:hover:before {
+  transform: translatex(12px);
+}
+.btn--border:hover span::after {
+  transform: translatey(-12px);
+}
+.btn--border:hover span::before {
+  transform: translatey(12px);
+}
+.btn--swap span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px 30px;
+  font-size: 40px;
+  box-sizing: border-box;
+  opacity: 0;
+  color: black;
+  transition: 0.35s ease;
+}
+.btn--swap::before {
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: white;
+  transition: 0.5s ease;
+}
+.btn--swap:hover:before {
+  width: 100%;
+}
+.btn--swap:hover span {
+  opacity: 1;
+}
+.btn--future::after,
+.btn--future::before {
+  content: "";
+  position: absolute;
+  border: 2px solid white;
+  width: calc(100% + 15px);
+  height: 60px;
+  transition: 0.5s ease;
+}
+.btn--future::after {
+  top: -15px;
+  left: -15px;
+  border-right: none;
+  border-bottom: none;
+}
+.btn--future::before {
+  bottom: -15px;
+  right: -15px;
+  border-left: none;
+  border-top: none;
+}
+.btn--future:hover:after,
+.btn--future:hover:before {
+  width: calc(100% - 30px);
+  height: 80px;
+}
