@@ -38,7 +38,6 @@
 .character-char-box {
   border: solid 2px black;
   padding: 10px;
-  display: none;
 }
 
 .character-char-box p:hover p {
@@ -55,4 +54,47 @@
 .character-stats p {
   font-size: 16px;
   text-align: center;
+}
+
+@media only screen and (max-width: 775px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 500%;
+  }
+
+  .btn {
+    padding: 10px;
+  }
+
+  h5 {
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+
+  #perks-title {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  /* For mobile phones: */
+  .character-selection {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  /* For mobile phones: */
+  .character-selection {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  }
 }
