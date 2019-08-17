@@ -1,8 +1,8 @@
 .login-wrapper {
   min-height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
-    url(../../images/landing-page.jpg);
+  background-image: url(../../images/landing-page.jpg);
   background-size: cover;
+  
 }
 
 .login-container {
@@ -12,6 +12,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Roboto', sans-serif;
+  z-index: 10;
 }
 
 .heading-container h1 {

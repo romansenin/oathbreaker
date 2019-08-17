@@ -1,21 +1,19 @@
 import React from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 const Fog = () => {
   return (
     <div className="hero-wrapper">
-      <section class="fog">
-        <div class="absolute-bg" />
-        <div class="fog-container" />
-        <div class="fog-img fog-img-first" />
-        <div class="fog-img fog-img-first" />
+      <section className="fog">
+        <div className="absolute-bg" />
+        <div className="fog-container" />
+        <div className="fog-img fog-img-first" />
+        <div className="fog-img fog-img-first" />
 
-        <div class="title">
+        <div className="title">
           <h1>OathBreaker</h1>
-          <button class="btn btn--border">
-            Join The Fight
-            <span />
-          </button>
+          <Link to="/login" className="btn btn--border">Join The Fight <span /></Link>
         </div>
       </section>
     </div>
