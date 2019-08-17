@@ -32,7 +32,7 @@ passport.use(
       db.User.findOneAndUpdate(
         { googleId: profile.id },
         { $setOnInsert: { googleName: profile.displayName } },
-        { new: true, upsert: true, returnNewDocument: true },
+        { new: true, upsert: true, returnNewDocument: true, useFindAndModify: false },
         (err, doc) => {
           if (err) console.error(err);
           return done(null, doc);

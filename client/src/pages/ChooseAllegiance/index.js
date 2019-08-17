@@ -5,7 +5,9 @@ export default class ChooseAllegiance extends Component {
     super(props);
     this.state = {};
   }
+
   render() {
-    return <h1>ChooseAllegiance</h1>;
+    const content = (this.props.user) ? <h1>ChooseAllegiance</h1> : "You need to login";
+    return content;
   }
 }

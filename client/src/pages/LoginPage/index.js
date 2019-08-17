@@ -12,6 +12,12 @@ export default class LoginPage extends Component {
   render() {
     return (
       <div className="login-wrapper">
+        <section className="fog">
+          <div className="absolute-bg" />
+          <div className="fog-container" />
+          <div className="fog-img fog-img-first" />
+          <div className="fog-img fog-img-first" />
+        </section>
         <div className="login-container">
           <Heading />
           <Form />

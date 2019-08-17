@@ -19,9 +19,9 @@ const apiRoutes = require("./routes/apiRoutes");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
-// if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-// }
+}
 app.use(
   cookieSession({
     maxAge: 24 * 60 * 60 * 1000, // 24-hour session
@@ -30,15 +30,6 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-
-// caching disabled for every route
-app.use(function(req, res, next) {
-  res.set(
-    "Cache-Control",
-    "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0"
-  );
-  next();
-});
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Project3DB", {

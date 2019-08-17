@@ -25,4 +25,9 @@ router.get(
   }
 );
 
+// sends user data to the front end
+router.get("/session", (req, res) => {
+  res.status(200).json(req.user);
+});
+
 module.exports = router;
