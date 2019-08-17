@@ -125,7 +125,7 @@ class App extends Component {
           <Route path="/public" component={Public} />
           <Route path="/login" component={withRouter(Login)} />
           <ProtectedRoute path="/protected" component={Protected} /> */}
-          {/* <Navbar /> */}
+          <Navbar />
           <Route exact path="/" render={() => <LandingPage />} />
           {<Route exact path="/login" render={() => <LoginPage />} />}
           <Route
