@@ -42,7 +42,7 @@ export default class CharacterSelection extends Component {
         <h1>Characters</h1>
         {this.renderCharacters()}
         <div className="character-stats">
-          <CharacterStats></CharacterStats>
+          <CharacterStats/>
         </div>
       </div>
     );

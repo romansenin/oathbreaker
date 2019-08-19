@@ -4,6 +4,10 @@
     url("rediviva-webfont.woff") format("woff");
 }
 
+.character-selection {
+  z-index: 20;
+}
+
 .character-selection h1 {
   text-align: center;
   font-family: "redivivaregular";

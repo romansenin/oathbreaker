@@ -1,11 +1,10 @@
 import React from "react";
 import "./style.css";
-import { Link } from "react-router-dom";
 
 const Fog = () => {
   return (
     <div className="hero-wrapper">
-      <section className="fog">
+      {/* <section className="fog">
         <div className="absolute-bg" />
         <div className="fog-container" />
         <div className="fog-img fog-img-first" />
@@ -15,7 +14,8 @@ const Fog = () => {
           <h1>OathBreaker</h1>
           <Link to="/login" className="btn btn--border">Join The Fight <span /></Link>
         </div>
-      </section>
+      </section> */}
+      
     </div>
   );
 };
