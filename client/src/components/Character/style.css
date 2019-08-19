@@ -1,17 +1,8 @@
 .character-selection {
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: url("../../images/characterselectbackground.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  position: absolute;
 }
 
 .character-img-container {
-  width: auto;
-  height: auto;
-  text-align: center;
   display: inline-block;
   margin-left: 25px;
   margin-top: 40px;
@@ -38,6 +29,7 @@
 .character-char-box {
   border: solid 2px black;
   padding: 10px;
+  background-color: #fff;
 }
 
 .character-char-box p:hover p {

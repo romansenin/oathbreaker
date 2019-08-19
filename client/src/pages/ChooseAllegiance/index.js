@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./style.css";
 
 export default class ChooseAllegiance extends Component {
   constructor(props) {
@@ -7,7 +8,6 @@ export default class ChooseAllegiance extends Component {
   }
 
   render() {
-    const content = (this.props.user) ? <h1>ChooseAllegiance</h1> : "You need to login";
-    return content;
+    return <h1>ChooseAllegiance</h1>;
   }
 }
