@@ -1,8 +1,9 @@
 [
   {
     "id": 1,
-    "name": "SpongeBob",
-    "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
+    "name": "Deadeye",
+    "image": "require('./images/test.jpg')",
+    "faction": 0,
     "health": 100,
     "attack": 15,
     "defense": 5,
@@ -10,8 +11,9 @@
   },
   {
     "id": 2,
-    "name": "Mr. Krabs",
+    "name": "Nexus",
     "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
+    "faction": 0,
     "health": 200,
     "attack": 10,
     "defense": 10,
@@ -19,8 +21,9 @@
   },
   {
     "id": 3,
-    "name": "Squidward",
+    "name": "Vanquisher",
     "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
+    "faction": 0,
     "health": 100,
     "attack": 15,
     "defense": 5,
@@ -28,8 +31,9 @@
   },
   {
     "id": 4,
-    "name": "Dexter",
+    "name": "Myrmidon",
     "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
+    "faction": 0,
     "health": 100,
     "attack": 15,
     "defense": 5,
@@ -37,8 +41,59 @@
   },
   {
     "id": 5,
-    "name": "Courage",
+    "name": "Outlaw",
     "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
+    "faction": 0,
+    "health": 100,
+    "attack": 15,
+    "defense": 5,
+    "agility": 25
+  },
+  {
+    "id": 6,
+    "name": "Duelist",
+    "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
+    "faction": 1,
+    "health": 100,
+    "attack": 15,
+    "defense": 5,
+    "agility": 25
+  },
+  {
+    "id": 7,
+    "name": "Sentinal",
+    "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
+    "faction": 1,
+    "health": 200,
+    "attack": 10,
+    "defense": 10,
+    "agility": 5
+  },
+  {
+    "id": 8,
+    "name": "Templar",
+    "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
+    "faction": 1,
+    "health": 100,
+    "attack": 15,
+    "defense": 5,
+    "agility": 25
+  },
+  {
+    "id": 9,
+    "name": "Paladin",
+    "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
+    "faction": 1,
+    "health": 100,
+    "attack": 15,
+    "defense": 5,
+    "agility": 25
+  },
+  {
+    "id": 10,
+    "name": "Songbow",
+    "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
+    "faction": 1,
     "health": 100,
     "attack": 15,
     "defense": 5,
