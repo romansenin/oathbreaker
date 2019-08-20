@@ -1,9 +1,3 @@
-/* .login-wrapper {
-  min-height: 100%;
-  background-image: url(../../images/landing-page.jpg);
-  background-size: cover;
-} */
-
 .login-container {
   position: absolute;
   width: 1140px;
@@ -90,18 +84,23 @@
   content: none;
 }
 
-.keep-logged-in label {
+.keep-logged-in p {
   margin: 0;
 }
 
 .keep-logged-in a {
-  flex: 1;
-  text-align: right;
+  /* flex: 1; */
+  /* text-align: right; */
+  margin-left: 5px;
+}
+
+.social-media {
+  padding-left: 20px;
 }
 
 .social-media a {
   background-color: #f4f4f4;
-  width: 80%;
+  width: 100%;
   text-align: center;
   margin-bottom: 5px;
 }
