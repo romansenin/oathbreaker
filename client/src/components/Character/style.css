@@ -16,6 +16,8 @@
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   transition: all 1s ease;
+  height: 267.85px;
+  width: 215px;
 }
 
 .character-img-container img:hover {
@@ -30,12 +32,13 @@
   border: solid 2px black;
   padding: 10px;
   background-color: #fff;
+  display: none;
 }
 
-.character-char-box p:hover p {
+.character-char-box:hover {
   border: solid 2px black;
   padding: 10px;
-  display: inline-block;
+  visibility: visible;
 }
 
 .character-stats h3 {

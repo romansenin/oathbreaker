@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //Development source for characters
-import characters from "../../characters.json";
+import characters from "../../characters";
 import Fighter from "../../components/Fighter";
 import "./style.css";
 

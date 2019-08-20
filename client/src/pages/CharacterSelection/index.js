@@ -2,9 +2,7 @@ import React, { Component } from "react";
 
 import Character from "../../components/Character";
 
-import CharacterStats from "../../components/CharacterStats";
-
-import characters from "../../characters.json";
+import characters from "../../characters";
 
 import "./style.css";
 
@@ -39,9 +37,6 @@ export default class CharacterSelection extends Component {
       <div className="character-selection">
         <h1>Characters</h1>
         {this.renderCharacters()}
-        <div className="character-stats">
-          <CharacterStats />
-        </div>
       </div>
     );
   }
