@@ -38,21 +38,11 @@
   justify-content: center;
 }
 
-.form-container form button {
-  background-color: rgb(37, 114, 247);
-  color: #fff;
-  border-radius: 3px;
-  box-shadow: 0 2px 2px #dfdfdf;
-}
-
 .form-container .local-login,
 .form-container .social-media {
   display: flex;
   flex-direction: column;
   flex: 1;
-}
-
-.form-container form .social-media {
   justify-content: center;
   align-items: center;
 }
@@ -66,11 +56,12 @@
   font-size: 90%;
   display: flex;
   align-items: center;
-  padding: 10px 0;
+  padding-top: 10px;
 }
 
-.form-container form input[type="email"] {
-  margin-bottom: 10px;
+.form-container form input {
+  margin-bottom: 5px;
+  width: 100%;
 }
 
 .form-container form input[type="checkbox"] {
@@ -89,18 +80,25 @@
 }
 
 .keep-logged-in a {
-  /* flex: 1; */
-  /* text-align: right; */
   margin-left: 5px;
 }
 
-.social-media {
-  padding-left: 20px;
+/* BUTTON */
+
+.form-container form button {
+  margin-top: 10px;
+  background-color: #3498db;
+  border: 1px solid #3498db;
+  color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 2px #dfdfdf;
+  width: 150px;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+  padding: 5px;
 }
 
-.social-media a {
-  background-color: #f4f4f4;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 5px;
+.form-container form button:active,
+.form-container form button:hover {
+  background-color: #2487c9;
+  border: 1px solid #2487c9;
 }
