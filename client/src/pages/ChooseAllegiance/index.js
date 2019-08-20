@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./style.css";
 
+import Alliance from "../../components/Alliance";
+
 export default class ChooseAllegiance extends Component {
   constructor(props) {
     super(props);
@@ -8,6 +10,11 @@ export default class ChooseAllegiance extends Component {
   }
 
   render() {
-    return <h1>ChooseAllegiance</h1>;
+    return (
+      <div className="choose-allegiance">
+        <Alliance type={0} />
+        <Alliance type={1} />
+      </div>
+    );
   }
 }

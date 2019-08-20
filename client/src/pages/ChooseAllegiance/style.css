@@ -1,3 +1,22 @@
-.choose-allegiance-container {
+.choose-allegiance {
   position: absolute;
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+}
+
+.alliance {
+  flex: 1;
+  min-height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.choose-allegiance #alliance0 {
+  background: url("../../images/Faction-War/Choose-Alliance-Resources/jason-nguyen-waterknight-jasonnguyen.jpg");
+  background-size: cover;
+}
+
+.choose-allegiance #alliance1 {
+  background: url("../../images/Faction-War/Choose-Alliance-Resources/coffee-man-darkgamebl2-sh-mmm.jpg");
+  background-size: cover;
 }

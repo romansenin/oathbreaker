@@ -6,8 +6,7 @@ import CharacterStats from "../../components/CharacterStats";
 
 import characters from "../../characters.json";
 
-import './style.css';
-
+import "./style.css";
 
 export default class CharacterSelection extends Component {
   constructor(props) {
@@ -28,7 +27,6 @@ export default class CharacterSelection extends Component {
               attack={value.attack}
               defense={value.defense}
               agility={value.agility}
-
             />
           );
         })}
@@ -42,7 +40,7 @@ export default class CharacterSelection extends Component {
         <h1>Characters</h1>
         {this.renderCharacters()}
         <div className="character-stats">
-          <CharacterStats/>
+          <CharacterStats />
         </div>
       </div>
     );
