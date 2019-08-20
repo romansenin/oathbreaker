@@ -6,6 +6,7 @@ import Wrapper from "./components/Wrapper";
 import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
+import SignUp from "./pages/SignUp";
 import ChooseAllegiance from "./pages/ChooseAllegiance";
 import CharacterSelection from "./pages/CharacterSelection";
 import BattlePage from "./pages/BattlePage";
@@ -49,6 +50,7 @@ class App extends Component {
               <div className="router-wrapper">
                 <Route exact path="/" render={() => <LandingPage />} />
                 <Route exact path="/login" render={() => <LoginPage />} />
+                <Route exact path="/signup" render={() => <SignUp />} />
                 <Route
                   exact
                   path="/chooseAllegiance"
