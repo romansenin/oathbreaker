@@ -4,8 +4,7 @@ import Character from "../../components/Character";
 
 import characters from "../../characters";
 
-import './style.css';
-
+import "./style.css";
 
 export default class CharacterSelection extends Component {
   constructor(props) {
@@ -26,7 +25,6 @@ export default class CharacterSelection extends Component {
               attack={value.attack}
               defense={value.defense}
               agility={value.agility}
-
             />
           );
         })}
