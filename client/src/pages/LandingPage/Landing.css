@@ -111,6 +111,26 @@ body {
   letter-spacing: 1px;
 }
 
+.git {
+  display: block;
+  padding-bottom: 40px;
+  position: absolute;
+  bottom: 8px;
+  left: 30px;
+  width: 70px;
+  height: 70px;
+  color: #fff;
+}
+.insta {
+  display: block;
+  padding-bottom: 40px;
+  position: absolute;
+  bottom: 8px;
+  left: 80px;
+  width: 70px;
+  height: 70px;
+  color: #fff;
+}
 .rating {
   display: block;
   padding-bottom: 40px;

@@ -6,6 +6,8 @@ import Story from "../../components/Story";
 import "./Landing.css";
 
 import { ReactComponent as Logo } from "../../images/rating.svg";
+import { ReactComponent as Git } from "../../images/git.svg";
+import { ReactComponent as Insta } from "../../images/insta.svg";
 
 export default class LandingPage extends Component {
   constructor(props) {
@@ -29,6 +31,16 @@ export default class LandingPage extends Component {
         <div>
           {/* Logo is an actual React component */}
           <Logo className="rating" />
+        </div>
+
+        <div>
+          {/* Git is an actual React component */}
+          <Git className="git" />
+        </div>
+
+        <div>
+          {/* Insta is an actual React component */}
+          <Insta className="insta" />
         </div>
 
         <Quote />
