@@ -19,7 +19,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
-  background: rgba(31, 31, 31, 0.2);
+  background: rgba(31, 31, 31, 0.3);
 }
 
 .absolute-bg {
