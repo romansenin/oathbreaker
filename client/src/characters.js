@@ -111,7 +111,6 @@ const characters = [
         "agility": 25
     }
 
-
 ]
 
 module.exports = characters;
