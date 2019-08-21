@@ -5,6 +5,7 @@
     "image": "require('./images/test.jpg')",
     "faction": 0,
     "health": 100,
+    "maxHealth": 100,
     "attack": 15,
     "defense": 5,
     "agility": 25
@@ -15,6 +16,7 @@
     "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
     "faction": 0,
     "health": 200,
+    "maxHealth": 200,
     "attack": 10,
     "defense": 10,
     "agility": 5
@@ -25,6 +27,7 @@
     "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
     "faction": 0,
     "health": 100,
+    "maxHealth": 100,
     "attack": 15,
     "defense": 5,
     "agility": 25
@@ -35,6 +38,7 @@
     "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
     "faction": 0,
     "health": 100,
+    "maxHealth": 100,
     "attack": 15,
     "defense": 5,
     "agility": 25
@@ -45,6 +49,7 @@
     "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
     "faction": 0,
     "health": 100,
+    "maxHealth": 100,
     "attack": 15,
     "defense": 5,
     "agility": 25
@@ -55,6 +60,7 @@
     "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
     "faction": 1,
     "health": 100,
+    "maxHealth": 100,
     "attack": 15,
     "defense": 5,
     "agility": 25
@@ -65,6 +71,7 @@
     "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
     "faction": 1,
     "health": 200,
+    "maxHealth": 200,
     "attack": 10,
     "defense": 10,
     "agility": 5
@@ -75,6 +82,7 @@
     "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
     "faction": 1,
     "health": 100,
+    "maxHealth": 100,
     "attack": 15,
     "defense": 5,
     "agility": 25
@@ -85,6 +93,7 @@
     "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
     "faction": 1,
     "health": 100,
+    "maxHealth": 100,
     "attack": 15,
     "defense": 5,
     "agility": 25
@@ -95,6 +104,7 @@
     "image": "https://i.pinimg.com/236x/6d/a3/3b/6da33b11b073baf7f71f2e9774eb932b.jpg",
     "faction": 1,
     "health": 100,
+    "maxHealth": 100,
     "attack": 15,
     "defense": 5,
     "agility": 25

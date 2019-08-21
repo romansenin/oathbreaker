@@ -112,15 +112,14 @@ body {
 }
 
 .rating {
-  padding-top: 20px;
+  display: block;
+  padding-bottom: 40px;
   position: absolute;
-  bottom: 4px;
-  right: 10px;
-  background-image: url("https://www.esrb.org/wp-content/uploads/2019/04/Everyone_10.svg");
+  bottom: 8px;
+  right: 30px;
+  width: 100px;
+  height: 100px;
   color: #fff;
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 .fog {
   position: relative;

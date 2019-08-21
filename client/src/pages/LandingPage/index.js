@@ -5,6 +5,8 @@ import Story from "../../components/Story";
 
 import "./Landing.css";
 
+import { ReactComponent as Logo } from "../../images/rating.svg";
+
 export default class LandingPage extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +25,10 @@ export default class LandingPage extends Component {
           <Link to="/login" className="btn btn--border">
             Join The Fight <span />
           </Link>
+        </div>
+        <div>
+          {/* Logo is an actual React component */}
+          <Logo className="rating" />
         </div>
 
         <Quote />
