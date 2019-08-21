@@ -7,11 +7,11 @@ class Alliance extends Component {
       <div id={"alliance" + this.props.type} className="alliance">
         {!this.props.type ? (
           <div>
-            <h1>First Alliance</h1>
+            <h1>The Triumvate</h1>
           </div>
         ) : (
           <div>
-            <h1>Second Alliance</h1>
+            <h1>The Vjarr</h1>
           </div>
         )}
       </div>
