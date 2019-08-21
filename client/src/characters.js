@@ -6,6 +6,7 @@ const characters = [
         "image": require("./images/deadeye.jpg"),
         "faction": 0,
         "health": 100,
+        "maxHealth": 100,
         "attack": 15,
         "defense": 5,
         "agility": 25
@@ -16,6 +17,7 @@ const characters = [
         "image": require("./images/nexus.jpg"),
         "faction": 0,
         "health": 200,
+        "maxHealth": 200,
         "attack": 10,
         "defense": 10,
         "agility": 5
@@ -26,6 +28,7 @@ const characters = [
         "image": require("./images/vanquisher.jpg"),
         "faction": 0,
         "health": 100,
+        "maxHealth": 100,
         "attack": 15,
         "defense": 5,
         "agility": 25
@@ -36,6 +39,7 @@ const characters = [
         "image": require("./images/myrmidon.jpg"),
         "faction": 0,
         "health": 100,
+        "maxHealth": 100,
         "attack": 15,
         "defense": 5,
         "agility": 25
@@ -46,6 +50,7 @@ const characters = [
         "image": require("./images/outlaw.jpg"),
         "faction": 0,
         "health": 100,
+        "maxHealth": 100,
         "attack": 15,
         "defense": 5,
         "agility": 25
@@ -56,6 +61,7 @@ const characters = [
         "image": require("./images/duelist.jpg"),
         "faction": 1,
         "health": 100,
+        "maxHealth": 100,
         "attack": 15,
         "defense": 5,
         "agility": 25
@@ -66,6 +72,7 @@ const characters = [
         "image": require("./images/sentinal.jpg"),
         "faction": 1,
         "health": 200,
+        "maxHealth": 200,
         "attack": 10,
         "defense": 10,
         "agility": 5
@@ -76,6 +83,7 @@ const characters = [
         "image": require("./images/templar.jpg"),
         "faction": 1,
         "health": 100,
+        "maxHealth": 100,
         "attack": 15,
         "defense": 5,
         "agility": 25
@@ -86,6 +94,7 @@ const characters = [
         "image": require("./images/paladin.jpg"),
         "faction": 1,
         "health": 100,
+        "maxHealth": 100,
         "attack": 15,
         "defense": 5,
         "agility": 25
@@ -96,6 +105,7 @@ const characters = [
         "image": require("./images/songbow.jpg"),
         "faction": 1,
         "health": 100,
+        "maxHealth": 100,
         "attack": 15,
         "defense": 5,
         "agility": 25

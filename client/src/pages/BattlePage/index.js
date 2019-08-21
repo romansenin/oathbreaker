@@ -68,6 +68,7 @@ export default class BattlePage extends Component {
                 id={characters[0].id}
                 image={characters[0].image}
                 health={characters[0].health}
+                maxHealth={characters[0].maxHealth}
                 attack={characters[0].attack}
                 defense={characters[0].defense}
                 agility={characters[0].agility}
@@ -82,6 +83,7 @@ export default class BattlePage extends Component {
                 id={characters[1].id}
                 image={characters[1].image}
                 health={characters[1].health}
+                maxHealth={characters[1].maxHealth}
                 attack={characters[1].attack}
                 defense={characters[1].defense}
                 agility={characters[1].agility}
