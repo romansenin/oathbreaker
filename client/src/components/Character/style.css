@@ -2,13 +2,15 @@
   position: absolute;
 }
 
-.character-img-container {
+.character-select-wrap {
   display: inline-block;
-  margin-left: 25px;
-  margin-top: 40px;
+  margin-top: 20px;
+  position: relative;
+  height: 200px;
+  width: 257px;
 }
 
-.character-img-container img {
+.character-select-image {
   -ms-transform: skew(-5deg, 0deg);
   -webkit-transform: skew(-5deg, 0deg);
   transform: skew(-5deg, 0deg);
@@ -20,7 +22,7 @@
   width: 215px;
 }
 
-.character-img-container img:hover {
+.character-select-image:hover {
   box-shadow: 0 30px 80px 0 rgb(0, 0, 0);
   -ms-transform: skew(-5deg, 0deg);
   -webkit-transform: skew(-5deg, 0deg);
@@ -28,27 +30,37 @@
   transform: scale(1.1);
 }
 
-.character-char-box {
-  border: solid 2px black;
+.character-select-name {
   padding: 10px;
-  background-color: #fff;
-  display: none;
+  position: relative;
+  text-align: center;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 2s ease;
 }
 
-.character-char-box:hover {
-  border: solid 2px black;
-  padding: 10px;
+.character-select-wrap:hover .character-select-name {
   visibility: visible;
+  opacity: 1;
+  font-size: 40px;
+  text-align: center;
+  color: white;
 }
 
-.character-stats h3 {
-  font-size: 18px;
+.character-select-description {
   text-align: center;
+  visibility: hidden;
+  transition: all 2s ease;
 }
 
-.character-stats p {
-  font-size: 16px;
+.character-select-wrap:hover .character-select-description {
+  visibility: visible;
+  opacity: 1;
+  font-size: 20px;
   text-align: center;
+  color: white;
 }
 
 @media only screen and (max-width: 775px) {
