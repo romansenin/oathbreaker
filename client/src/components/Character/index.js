@@ -8,14 +8,16 @@ class Character extends Component {
 
     render() {
         return (
-            <div className="character-img-container">
-                <img
+            <div className="character-select-wrap">
+                <img className="character-select-image"
                     alt={this.props.name}
                     src={this.props.image}
                 />
-                <div className="character-char-box">
-                    <p>{this.props.name}</p>
-                    <h3>Stats:</h3>
+                <h2 className="character-select-name">
+                    {this.props.name}</h2>
+                
+                <div className="character-select-description">
+                    <p>Stats:</p>
                     <p>Health: {this.props.health}</p>
                     <p>Attack: {this.props.attack}</p>
                     <p>Defense: {this.props.defense}</p>
