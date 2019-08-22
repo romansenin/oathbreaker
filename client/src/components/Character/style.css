@@ -1,33 +1,44 @@
+@font-face {
+  font-family: "metror";
+  src: url(../../Font/metror.ttf);
+  font-style: normal;
+  font-weight: 200;
+}
+
+ul {
+  padding: 0;
+  margin-left: 20px;
+}
+
 .character-selection {
   position: absolute;
 }
 
 .character-select-wrap {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 10px;
   position: relative;
-  height: 200px;
-  width: 257px;
+  height: 100%;
+  width: 140px;
 }
 
 .character-select-image {
   -ms-transform: skew(-5deg, 0deg);
   -webkit-transform: skew(-5deg, 0deg);
   transform: skew(-5deg, 0deg);
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
-  height: 267.85px;
-  width: 215px;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -ms-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+  height: 160.85px;
+  width: 135px;
+  margin-top: 5rem;
 }
 
 .character-select-image:hover {
-  box-shadow: 0 30px 80px 0 rgb(0, 0, 0);
   -ms-transform: skew(-5deg, 0deg);
   -webkit-transform: skew(-5deg, 0deg);
   transform: skew(-5deg, 0deg);
-  transform: scale(1.1);
 }
 
 .character-select-name {
@@ -37,30 +48,56 @@
   left: 0;
   right: 0;
   opacity: 0;
-  visibility: hidden;
-  transition: all 2s ease;
+  display: none;
+  font-family: "metror";
+  font-weight: 200;
+  color: #fff;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -ms-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
 
 .character-select-wrap:hover .character-select-name {
   visibility: visible;
   opacity: 1;
-  font-size: 40px;
+  font-size: 1.9rem;
   text-align: center;
   color: white;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -ms-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
 
 .character-select-description {
   text-align: center;
   visibility: hidden;
-  transition: all 2s ease;
+  font-family: "metror";
+  font-weight: 200;
+  color: #fff;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -ms-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
 
 .character-select-wrap:hover .character-select-description {
   visibility: visible;
   opacity: 1;
-  font-size: 20px;
+  font-size: 1.9rem;
   text-align: center;
   color: white;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -ms-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
 
 @media only screen and (max-width: 775px) {

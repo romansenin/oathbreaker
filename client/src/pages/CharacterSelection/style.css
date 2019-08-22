@@ -6,14 +6,17 @@
 
 .character-selection {
   z-index: 20;
+  padding: 0;
 }
 
 .character-selection h1 {
-  text-align: center;
+  text-align: left;
   font-family: "redivivaregular";
-  font-size: 90px;
   letter-spacing: 0.3cm;
-  font-weight: normal;
-  font-style: normal;
-  color: black;
+  margin-top: 8px;
+  margin-left: 16px;
+  font-weight: 100;
+  color: #fff;
+  font-size: 4rem;
+  padding-top: 20px;
 }
