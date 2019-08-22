@@ -8,22 +8,26 @@ class Character extends Component {
 
     render() {
         return (
-            <div className="character-select-wrap">
-                <img className="character-select-image"
-                    alt={this.props.name}
-                    src={this.props.image}
-                />
-                <h2 className="character-select-name">
-                    {this.props.name}</h2>
-                
-                <div className="character-select-description">
-                    <p>Stats:</p>
-                    <p>Health: {this.props.health}</p>
-                    <p>Attack: {this.props.attack}</p>
-                    <p>Defense: {this.props.defense}</p>
-                    <p>Agility: {this.props.agility}</p>
+                <div className="character-select-wrap">
+                    <img className="character-select-image"
+                        alt={this.props.name}
+                        src={this.props.image}
+                    />
+                    <h2 className="character-select-name">
+                        {this.props.name}</h2>
+
+                    <div className="character-select-description">
+                        <span>Stats:</span><br>
+                        </br>
+                        <span>Health: {this.props.health}</span><br>
+                        </br>
+                        <span>Attack: {this.props.attack}</span><br>
+                        </br>
+                        <span>Defense: {this.props.defense}</span><br>
+                        </br>
+                        <span>Agility: {this.props.agility}</span>
+                    </div>
                 </div>
-            </div>
         );
     }
 }
