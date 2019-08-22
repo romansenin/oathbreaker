@@ -27,7 +27,7 @@ class App extends Component {
     axios.get("/session").then(user => {
       this.setState({ user: user.data });
       setTimeout(() => {
-        this.setState({spinner: false})
+        this.setState({ spinner: false });
       }, 1000);
     });
   }
@@ -37,7 +37,7 @@ class App extends Component {
       <Router>
         <div>
           <Navbar />
-          <Wrapper>
+          <Wrapper fog={this.state.fog}>
             {this.state.spinner ? (
               <FontAwesome
                 className="spinner"
@@ -54,7 +54,12 @@ class App extends Component {
                 <Route
                   exact
                   path="/chooseAllegiance"
-                  render={() => <ChooseAllegiance user={this.state.user} />}
+                  render={() => (
+                    <ChooseAllegiance
+                      user={this.state.user}
+                      toggleFog={this.toggleFog}
+                    />
+                  )}
                 />
                 <Route
                   exact
