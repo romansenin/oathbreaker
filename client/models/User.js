@@ -11,7 +11,15 @@ const UserSchema = new Schema({
     type: String,
     required: false
   },
-  googleName: {
+  displayName: {
+    type: String,
+    required: false
+  },
+  email: {
+    type: String,
+    required: false
+  },
+  password: {
     type: String,
     required: false
   }

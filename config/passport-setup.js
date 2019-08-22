@@ -31,7 +31,7 @@ passport.use(
 
       db.User.findOneAndUpdate(
         { googleId: profile.id },
-        { $setOnInsert: { googleName: profile.displayName } },
+        { $setOnInsert: { displayName: profile.displayName } },
         { new: true, upsert: true, returnNewDocument: true, useFindAndModify: false },
         (err, doc) => {
           if (err) console.error(err);

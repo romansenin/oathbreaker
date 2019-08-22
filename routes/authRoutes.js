@@ -30,4 +30,9 @@ router.get("/session", (req, res) => {
   res.status(200).json(req.user);
 });
 
+router.post("/register", (req, res) => {
+  console.log(req.body);
+  res.send('hello');
+});
+
 module.exports = router;

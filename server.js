@@ -10,6 +10,7 @@ const app = express();
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
+const enforce = require("express-sslify");
 
 // Routes
 const authRoutes = require("./routes/authRoutes");
@@ -28,11 +29,17 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+if (process.env.PORT) {
+  app.use(enforce.HTTPS({ trustProtoHeader: true }));
+}
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Project3DB", {
-  useNewUrlParser: true
-});
+mongoose
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/Project3DB", {
+    useNewUrlParser: true
+  })
+  .then(() => console.log("Mongo Connected..."))
+  .catch(err => console.log(err));
 
 // Use the routes
 app.use(apiRoutes);
