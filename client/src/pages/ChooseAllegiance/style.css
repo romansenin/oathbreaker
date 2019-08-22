@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+  padding: 0;
+}
 .choose-allegiance {
   position: absolute;
   display: flex;
@@ -9,14 +13,92 @@
   flex: 1;
   min-height: 100%;
   background: rgba(255, 255, 255, 0.1);
+  overflow-y: hidden;
 }
 
 .choose-allegiance #alliance0 {
-  background: url("../../images/Faction-War/Choose-Alliance-Resources/jason-nguyen-waterknight-jasonnguyen.jpg");
+  background: url("../../images/Faction-War/Choose-Alliance-Resources/jason-nguyen-waterknight-jasonnguyen.jpg")
+    no-repeat;
   background-size: cover;
+  transition: transform 0.5s;
+}
+
+.rain {
+  height: 100vh;
+  background: url("../../images/rain.png");
+  animation: rain 0.5s linear infinite;
+}
+
+.choose-allegiance #alliance0:hover,
+.choose-allegiance #alliance1:hover {
+  transform: scale(1.15);
+}
+
+@keyframes rain {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 25% 100%;
+  }
 }
 
 .choose-allegiance #alliance1 {
-  background: url("../../images/Faction-War/Choose-Alliance-Resources/coffee-man-darkgamebl2-sh-mmm.jpg");
+  /* margin-top: -100vh; */
+
+  background: url("../../images/coffee-man-darkgamebl2-sh-mmm.jpg");
   background-size: cover;
+  z-index: 0;
+  transition: transform 0.5s;
+}
+
+.fog-wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: #fff;
+  overflow-x: hidden;
+  transition: transform 0.5s;
+  overflow-y: hidden;
+}
+
+.fog-wrapper:hover {
+  transform: scale(1.15);
+}
+
+.fog-alliance {
+  position: absolute;
+  height: 100vh;
+  width: 50vw;
+  overflow-x: hidden;
+}
+
+.alliance-fog-1 {
+  /* min-height: 100vh; */
+  background: url("https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-1.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: center;
+  animation: marquee 60s linear infinite;
+  overflow-x: hidden;
+}
+
+.alliance-fog-2 {
+  /* min-height: 100vh; */
+  background: url("https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-2.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: center;
+  animation: marquee 60s linear infinite;
+  overflow-x: hidden;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-200vw, 0, 0);
+  }
 }
