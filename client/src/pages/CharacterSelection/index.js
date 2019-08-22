@@ -19,12 +19,14 @@ export default class CharacterSelection extends Component {
           return (
             <Character
               key={index}
+              id={value.id}
               name={value.name}
               image={value.image}
               health={value.health}
               attack={value.attack}
               defense={value.defense}
               agility={value.agility}
+              clicked={this.props.clicked}
             />
           );
         })}

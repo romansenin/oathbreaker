@@ -19,7 +19,9 @@ class App extends Component {
     super(props);
     this.state = {
       user: undefined,
-      spinner: true
+      spinner: true,
+      player: 0,
+      enemy: 0
     };
   }
 
@@ -27,8 +29,21 @@ class App extends Component {
     axios.get("/session").then(user => {
       this.setState({ user: user.data });
       setTimeout(() => {
-        this.setState({spinner: false})
+        this.setState({ spinner: false });
       }, 1000);
+    });
+  }
+
+  charClicked = id => {
+    var enemyId = id;
+    
+    while(enemyId === id){
+      enemyId = Math.floor(Math.random() * 10);
+    }
+    
+    this.setState({
+      player: id,
+      enemy: enemyId
     });
   }
 
@@ -37,7 +52,7 @@ class App extends Component {
       <Router>
         <div>
           <Navbar />
-          <Wrapper>
+          <Wrapper fog={this.state.fog}>
             {this.state.spinner ? (
               <FontAwesome
                 className="spinner"
@@ -54,17 +69,22 @@ class App extends Component {
                 <Route
                   exact
                   path="/chooseAllegiance"
-                  render={() => <ChooseAllegiance user={this.state.user} />}
+                  render={() => (
+                    <ChooseAllegiance
+                      user={this.state.user}
+                      toggleFog={this.toggleFog}
+                    />
+                  )}
                 />
                 <Route
                   exact
                   path="/selectCharacter"
-                  render={() => <CharacterSelection user={this.state.user} />}
+                  render={() => <CharacterSelection user={this.state.user} clicked={this.charClicked} history={this.history}/>}
                 />
                 <Route
                   exact
                   path="/battle"
-                  render={() => <BattlePage user={this.state.user} />}
+                  render={() => <BattlePage user={this.state.user} player={this.state.player} enemy={this.state.enemy}/>}
                 />
               </div>
             )}
