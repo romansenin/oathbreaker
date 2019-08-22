@@ -85,7 +85,7 @@
 
 /* BUTTON */
 
-.form-container form button {
+.form-container form .submit-button {
   margin-top: 10px;
   background-color: #3498db;
   border: 1px solid #3498db;
@@ -97,8 +97,12 @@
   padding: 5px;
 }
 
-.form-container form button:active,
-.form-container form button:hover {
+.form-container form .submit-button:active,
+.form-container form .submit-button:hover {
   background-color: #2487c9;
   border: 1px solid #2487c9;
+}
+
+.alert {
+  padding: 0;
 }
