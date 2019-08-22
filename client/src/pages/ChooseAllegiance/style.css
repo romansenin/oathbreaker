@@ -45,7 +45,7 @@ body {
 .choose-allegiance #alliance1 {
   /* margin-top: -100vh; */
 
-  background: url("../../images/Faction-War/Choose-Alliance-Resources/coffee-man-darkgamebl2-sh-mmm.jpg");
+  background: url("../../images/coffee-man-darkgamebl2-sh-mmm.jpg");
   background-size: cover;
   z-index: 0;
   transition: transform 0.5s;
