@@ -13,6 +13,7 @@ body {
   flex: 1;
   min-height: 100%;
   background: rgba(255, 255, 255, 0.1);
+  overflow-y: hidden;
 }
 
 .choose-allegiance #alliance0 {
@@ -58,6 +59,7 @@ body {
   background: #fff;
   overflow-x: hidden;
   transition: transform 0.5s;
+  overflow-y: hidden;
 }
 
 .fog-wrapper:hover {
