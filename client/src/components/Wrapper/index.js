@@ -7,7 +7,7 @@ const Wrapper = props => {
         <div className="absolute-bg" />
         <div className="fog-container" />
         <div className="fog-img fog-img-first" />
-        <div className="fog-img fog-img-first" />
+        <div className="fog-img fog-img-second" />
         {props.children}
       </section>
     </>
