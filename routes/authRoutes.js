@@ -1,5 +1,6 @@
 const passport = require("passport");
 const router = require("express").Router();
+const bcrypt = require("bcryptjs");
 
 const User = require("../client/models/User");
 
@@ -33,14 +34,17 @@ router.get("/session", (req, res) => {
 });
 
 router.post("/register", (req, res) => {
-  const { email } = req.body;
+  const { displayName, email, password } = req.body;
 
   User.findOne({ email })
     .then(user => {
       if (user)
-        res.status(200).json({ error_msg: "Email is already registered" });
+        res.status(500).json({ error_msg: "Email is already registered" });
+      else {
+        const newUser = new User({ displayName, email, password });
+      }
     })
-    .catch();
+    .catch(err => console.log(err));
 
   res.send("hello");
 });
