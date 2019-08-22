@@ -63,31 +63,31 @@ export default class BattlePage extends Component {
           <div className="row">
             <div className="col-md-6 text-center">
               <Fighter
-                name={characters[0].name}
-                key={characters[0].id}
-                id={characters[0].id}
-                image={characters[0].image}
-                health={characters[0].health}
-                maxHealth={characters[0].maxHealth}
-                attack={characters[0].attack}
-                defense={characters[0].defense}
-                agility={characters[0].agility}
-                target={characters[1].id}
+                name={characters[this.props.player - 1].name}
+                key={characters[this.props.player - 1].id}
+                id={characters[this.props.player - 1].id}
+                image={characters[this.props.player - 1].image}
+                health={characters[this.props.player - 1].health}
+                maxHealth={characters[this.props.player - 1].maxHealth}
+                attack={characters[this.props.player - 1].attack}
+                defense={characters[this.props.player - 1].defense}
+                agility={characters[this.props.player - 1].agility}
+                target={characters[this.props.enemy - 1].id}
                 handleAttack={this.handleAttack}
               />
             </div>
             <div className="col-md-6 text-center">
               <Fighter
-                name={characters[1].name}
-                key={characters[1].id}
-                id={characters[1].id}
-                image={characters[1].image}
-                health={characters[1].health}
-                maxHealth={characters[1].maxHealth}
-                attack={characters[1].attack}
-                defense={characters[1].defense}
-                agility={characters[1].agility}
-                target={characters[0].id}
+                name={characters[this.props.enemy - 1].name}
+                key={characters[this.props.enemy - 1].id}
+                id={characters[this.props.enemy - 1].id}
+                image={characters[this.props.enemy - 1].image}
+                health={characters[this.props.enemy - 1].health}
+                maxHealth={characters[this.props.enemy - 1].maxHealth}
+                attack={characters[this.props.enemy - 1].attack}
+                defense={characters[this.props.enemy - 1].defense}
+                agility={characters[this.props.enemy - 1].agility}
+                target={characters[this.props.player - 1].id}
               />
             </div>
           </div>

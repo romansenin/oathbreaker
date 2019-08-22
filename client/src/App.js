@@ -19,7 +19,9 @@ class App extends Component {
     super(props);
     this.state = {
       user: undefined,
-      spinner: true
+      spinner: true,
+      player: 0,
+      enemy: 0
     };
   }
 
@@ -30,6 +32,20 @@ class App extends Component {
         this.setState({spinner: false})
       }, 1000);
     });
+  }
+
+  charClicked = id => {
+    if(id !== 10){
+      this.setState({
+        player: id,
+        enemy: id+1
+      });
+    } else {
+      this.setState({
+        player: id,
+        enemy: 1
+      });
+    }
   }
 
   render() {
@@ -59,12 +75,12 @@ class App extends Component {
                 <Route
                   exact
                   path="/selectCharacter"
-                  render={() => <CharacterSelection user={this.state.user} />}
+                  render={() => <CharacterSelection user={this.state.user} clicked={this.charClicked} history={this.history}/>}
                 />
                 <Route
                   exact
                   path="/battle"
-                  render={() => <BattlePage user={this.state.user} />}
+                  render={() => <BattlePage user={this.state.user} player={this.state.player} enemy={this.state.enemy}/>}
                 />
               </div>
             )}
