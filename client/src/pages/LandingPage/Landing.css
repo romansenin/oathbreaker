@@ -75,7 +75,7 @@ body {
 }
 
 .sub-title {
-  padding: 500px 0 0 20px;
+  padding: 400px 0 0 20px;
   font-family: "berserk";
   font-weight: 50;
   color: #fff;
@@ -153,7 +153,7 @@ body {
   position: absolute;
   height: 100vh;
   width: 300vw;
-  overflow-x: hidden;
+  pointer-events: none;
 }
 
 .fog-img-first {

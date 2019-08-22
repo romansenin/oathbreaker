@@ -2,11 +2,13 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .choose-allegiance {
   position: absolute;
   display: flex;
   width: 100%;
-  min-height: 100%;
+  /* min-height: 100%; */
+  overflow-y: hidden;
 }
 
 .alliance {
@@ -16,6 +18,15 @@ body {
   overflow-y: hidden;
 }
 
+.alliance-container {
+  flex: 1;
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+  -ms-animation: fadein 1s; /* Internet Explorer */
+  -o-animation: fadein 1s; /* Opera < 12.1 */
+  animation: fadein 1s;
+}
+
 .choose-allegiance #alliance0 {
   background: url("../../images/Faction-War/Choose-Alliance-Resources/jason-nguyen-waterknight-jasonnguyen.jpg")
     no-repeat;
@@ -23,33 +34,21 @@ body {
   transition: transform 0.5s;
 }
 
-.rain {
-  height: 100vh;
-  background: url("../../images/rain.png");
-  animation: rain 0.5s linear infinite;
-}
-
-.choose-allegiance #alliance0:hover,
-.choose-allegiance #alliance1:hover {
+.choose-allegiance #alliance0:hover {
   transform: scale(1.15);
 }
 
-@keyframes rain {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 25% 100%;
-  }
+.rain {
+  height: 100vh;
+  background: url("../../images/rain.png");
+  animation: rain 0.3s linear infinite;
 }
 
 .choose-allegiance #alliance1 {
-  /* margin-top: -100vh; */
-
   background: url("../../images/coffee-man-darkgamebl2-sh-mmm.jpg");
   background-size: cover;
-  z-index: 0;
-  transition: transform 0.5s;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .fog-wrapper {
@@ -62,35 +61,34 @@ body {
   overflow-y: hidden;
 }
 
-.fog-wrapper:hover {
-  transform: scale(1.15);
-}
-
 .fog-alliance {
   position: absolute;
   height: 100vh;
   width: 50vw;
   overflow-x: hidden;
+  overflow-x: hidden;
+  max-width: 100%;
+  transition: transform 0.5s;
+}
+
+.fog-alliance:hover {
+  transform: scale(1.15);
 }
 
 .alliance-fog-1 {
-  /* min-height: 100vh; */
   background: url("https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-1.png");
   background-repeat: repeat-x;
   background-size: contain;
   background-position: center;
   animation: marquee 60s linear infinite;
-  overflow-x: hidden;
 }
 
 .alliance-fog-2 {
-  /* min-height: 100vh; */
   background: url("https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-2.png");
   background-repeat: repeat-x;
   background-size: contain;
   background-position: center;
   animation: marquee 60s linear infinite;
-  overflow-x: hidden;
 }
 
 @keyframes marquee {
@@ -100,5 +98,63 @@ body {
 
   100% {
     transform: translate3d(-200vw, 0, 0);
+  }
+}
+
+@keyframes rain {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 25% 100%;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
