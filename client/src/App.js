@@ -21,7 +21,7 @@ class App extends Component {
       user: undefined,
       spinner: true,
       player: 0,
-      enemy: 0
+      enemy: 1
     };
   }
 
