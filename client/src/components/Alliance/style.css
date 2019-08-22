@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "metror";
+  src: url(../../Font/metror.ttf);
+  font-style: normal;
+  font-weight: 200;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 2s ease;
+  background: rgba(58, 58, 58, 0.5);
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  padding: 40px 0 0 40px;
+  color: white;
+  font-family: "metror";
+  font-size: 16px;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-image: linear-gradient();
+}
+
+.text-2 {
+  padding: 40px 0 0 40px;
+  color: white;
+  font-family: "metror";
+  font-size: 13px;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-image: linear-gradient();
+}
