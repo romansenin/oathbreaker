@@ -1,6 +1,8 @@
 const passport = require("passport");
 const router = require("express").Router();
 
+const User = require("../client/models/User");
+
 // auth logout
 router.get("/auth/logout", (req, res) => {
   req.logout();
@@ -31,8 +33,16 @@ router.get("/session", (req, res) => {
 });
 
 router.post("/register", (req, res) => {
-  console.log(req.body);
-  res.send('hello');
+  const { email } = req.body;
+
+  User.findOne({ email })
+    .then(user => {
+      if (user)
+        res.status(200).json({ error_msg: "Email is already registered" });
+    })
+    .catch();
+
+  res.send("hello");
 });
 
 module.exports = router;
