@@ -2,36 +2,20 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../images/google-logo.png";
 
-import Modal from "react-modal";
-
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)"
-  }
-};
-
-Modal.setAppElement("#root");
+const axios = require("axios");
 
 export default class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
+      displayName: "",
       password: "",
-      confirmPassword: "",
-      modalIsOpen: false
+      password2: "",
+      errors: []
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // modal functions
-    this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
   }
 
   handleInputChange(event) {
@@ -45,26 +29,37 @@ export default class Form extends Component {
   }
 
   handleSubmit(event) {
-    console.log(this.state.email);
-    console.log(this.state.password);
+    const email = this.state.email;
+    const displayName = this.state.displayName;
+    const password = this.state.password;
+    const password2 = this.state.password2;
+
     if (this.props.view === "signup") {
-      console.log(this.state.confirmPassword);
+      this.setState({ errors: [] }, () => {
+        let errors = [];
+
+        // Check required fields
+        if (!email || !displayName || !password || !password2)
+          errors.push({ msg: "Please fill in all fields" });
+
+        // Check password match
+        if (password !== password2)
+          errors.push({ msg: "Passwords do not match" });
+
+        // Check password length
+        if (password.length < 6)
+          errors.push({ msg: "Password should be at least 6 characters" });
+
+        if (errors.length) this.setState({ errors });
+        else
+          axios
+            .post("/register", { email, displayName, password, password2 })
+            .then(result => console.log(result.data))
+            .catch(err => console.log(err));
+      });
     }
 
     event.preventDefault();
-  }
-
-  openModal() {
-    this.setState({ modalIsOpen: true });
-  }
-
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    this.subtitle.style.color = "#f00";
-  }
-
-  closeModal() {
-    this.setState({ modalIsOpen: false });
   }
 
   render() {
@@ -78,6 +73,33 @@ export default class Form extends Component {
             <h1>Log In To Your Account</h1>
           ) : (
             <h1>Sign Up for an Account</h1>
+          )}
+
+          {this.state.errors.length ? (
+            <ul>
+              {this.state.errors.map((value, index) => {
+                return (
+                  <div
+                    className="alert alert-warning alert-dismissible fade show"
+                    role="alert"
+                    key={index}
+                  >
+                    {value.msg}
+                    <button
+                      type="button"
+                      className="close"
+                      data-dismiss="alert"
+                      aria-label="Close"
+                      style={{ padding: 0, marginRight: "2%" }}
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                );
+              })}
+            </ul>
+          ) : (
+            ""
           )}
 
           <div className="main">
@@ -96,6 +118,20 @@ export default class Form extends Component {
                 value={this.state.email}
                 onChange={this.handleInputChange}
               />
+              {this.props.view === "signup" ? (
+                <input
+                  type="text"
+                  placeholder="Display Name"
+                  onFocus={e => (e.target.placeholder = "")}
+                  onClick={e => (e.target.placeholder = "")}
+                  onBlur={e => (e.target.placeholder = "Display Name")}
+                  name="displayName"
+                  value={this.state.displayName}
+                  onChange={this.handleInputChange}
+                />
+              ) : (
+                ""
+              )}
               <input
                 type="password"
                 placeholder="Password"
@@ -113,18 +149,15 @@ export default class Form extends Component {
                   onFocus={e => (e.target.placeholder = "")}
                   onClick={e => (e.target.placeholder = "")}
                   onBlur={e => (e.target.placeholder = "Confirm Password")}
-                  name="confirmPassword"
-                  value={this.state.confirmPassword}
+                  name="password2"
+                  value={this.state.password2}
                   onChange={this.handleInputChange}
                 />
               ) : (
                 ""
               )}
 
-              <button
-                className={this.props.view === "login" ? "" : "signup-button"}
-                type="submit"
-              >
+              <button className="submit-button" type="submit">
                 {this.props.view === "login" ? "Log In" : "Sign Up"}
               </button>
               {this.props.view === "login" ? (
@@ -138,27 +171,6 @@ export default class Form extends Component {
                   <Link to="/login">Log In</Link>
                 </div>
               )}
-            </div>
-            <div>
-              <button onClick={this.openModal}>Open Modal</button>
-              <Modal
-                isOpen={this.state.modalIsOpen}
-                onAfterOpen={this.afterOpenModal}
-                onRequestClose={this.closeModal}
-                style={customStyles}
-                contentLabel="Example Modal"
-              >
-                <h2 ref={subtitle => (this.subtitle = subtitle)}>Hello</h2>
-                <button onClick={this.closeModal}>close</button>
-                <div>I am a modal</div>
-                <form>
-                  <input />
-                  <button>tab navigation</button>
-                  <button>stays</button>
-                  <button>inside</button>
-                  <button>the modal</button>
-                </form>
-              </Modal>
             </div>
 
             {this.props.view === "login" ? (

@@ -11,7 +11,7 @@ const UserSchema = new Schema({
     type: String,
     required: false
   },
-  googleName: {
+  displayName: {
     type: String,
     required: false
   },
