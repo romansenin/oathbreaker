@@ -35,17 +35,16 @@ class App extends Component {
   }
 
   charClicked = id => {
-    if(id !== 10){
-      this.setState({
-        player: id,
-        enemy: id+1
-      });
-    } else {
-      this.setState({
-        player: id,
-        enemy: 1
-      });
+    var enemyId = id;
+    
+    while(enemyId === id){
+      enemyId = Math.floor(Math.random() * 10);
     }
+    
+    this.setState({
+      player: id,
+      enemy: enemyId
+    });
   }
 
   render() {
