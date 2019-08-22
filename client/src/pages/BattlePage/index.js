@@ -39,7 +39,10 @@ export default class BattlePage extends Component {
         }
         if (newCharacters[i].id === atkId) {
           console.log(`${def.name} counterattacks ${atk.name}`);
-          newCharacters[i].health -= def.attack - atk.defense;
+          var damage = def.attack - (atk.defense + (Math.floor(Math.random() * 5) + 1));
+          if(damage > 0){
+            newCharacters[i].health -= damage;
+          }
           if (newCharacters[i].health < 0) {
             newCharacters[i].health = 0;
           }
