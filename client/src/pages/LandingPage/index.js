@@ -40,13 +40,14 @@ export default class LandingPage extends Component {
           </Link>
         </div>
         <div>
-          {/* Logo is an actual React component */}
-          <Logo className="rating" />
+          {/* Logo is an actual React component */} <Logo className="rating" />
         </div>
 
         <div>
           {/* Git is an actual React component */}
-          <Git className="git" />
+          <a href="https://github.com/romansenin/group-project-3">
+            <Git className="git" />
+          </a>
         </div>
 
         <div>
