@@ -59,7 +59,7 @@ router.post("/register", (req, res) => {
     .catch(err => console.log(err));
 });
 
-router.post("/auth/local", (req, res) => {
+router.post("/auth/local", (req, res, next) => {
   const { email, password } = req.body;
 
   User.findOne({ email })
@@ -70,16 +70,13 @@ router.post("/auth/local", (req, res) => {
       else
         bcrypt.compare(password, user.password, (err, isMatch) => {
           if (err) throw err;
-          if (isMatch)
-            res.status(200).json({ success_msg: "You are now logged in!" });
-          else res.status(200).json({ error_msg: "Password incorrect" });
+          if (isMatch) {
+            // res.status(200).json({ success_msg: "You are now logged in!" });
+            passport.authenticate("local", {})(req, res, next);
+          } else res.status(200).json({ error_msg: "Password incorrect" });
         });
     })
     .catch(err => console.log(err));
-
-  // passport.authenticate("local", {
-  //   successRedirect: "/chooseAllegiance"
-  // })(req, res, next);
 });
 
 // sends user data to the front end

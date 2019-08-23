@@ -78,6 +78,7 @@ class Form extends Component {
               this.setState({ errors: [{ msg: result.data.error_msg }] });
             else {
               // successful login
+              window.location.pathname = "/chooseAllegiance"
             }
           })
           .catch(err => console.log(err));

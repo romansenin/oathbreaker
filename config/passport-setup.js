@@ -40,26 +40,6 @@ passport.use(
   })
 );
 
-// passport.use(
-//   new LocalStrategy({ usernameField: "email" }, (email, password, done) => {
-//     User.findOne({ email }, function(err, user) {
-//       if (err) {
-//         return done(err);
-//       }
-//       if (!user) {
-//         return done(null, false, { message: "That email is not registered" });
-//       }
-//       // Match password
-//       bcrypt.compare(password, user.password, (err, isMatch) => {
-//         if (err) throw err;
-//         if (isMatch) return done(null, user);
-//         else return done(null, false, { message: "Password incorrect" });
-//       });
-//       return done(null, user);
-//     });
-//   })
-// );
-
 passport.use(
   new GoogleStrategy(
     {

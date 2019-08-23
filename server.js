@@ -45,6 +45,16 @@ mongoose
 app.use(apiRoutes);
 app.use(authRoutes);
 
+// handle any asynchronous error during express pipeline
+app.use(function(err, req, res, next) {
+  console.log(err);
+  // if (res.headersSent) {
+  //   return next(err);
+  // }
+  // req.logout();
+  // res.status(500).redirect("/");
+});
+
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
