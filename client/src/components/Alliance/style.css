@@ -4,6 +4,19 @@
   font-style: normal;
   font-weight: 200;
 }
+@font-face {
+  font-family: "berserk";
+  src: url(../../Font/Berserker-Regular.ttf);
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "ace";
+  src: url(../../Font/Valkyrie-Extended.ttf);
+  font-style: normal;
+  font-weight: 100;
+}
 
 .overlay {
   position: absolute;
@@ -21,8 +34,35 @@
   opacity: 1;
 }
 
-.text {
+#one {
   padding: 40px 0 0 40px;
+  color: white;
+  font-family: "ace";
+  font-size: 45px;
+  letter-spacing: 3px;
+  position: absolute;
+  top: -25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-image: linear-gradient();
+}
+
+#two {
+  padding: 40px 0 0 40px;
+  color: white;
+  font-family: "berserk";
+  font-size: 45px;
+  letter-spacing: 3px;
+  position: absolute;
+  top: -25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-image: linear-gradient();
+}
+.text {
+  padding: 60px 0 0 20px;
   color: white;
   font-family: "metror";
   font-size: 25px;
