@@ -38,7 +38,7 @@ mongoose
   .connect(process.env.MONGODB_URI || "mongodb://localhost/Project3DB", {
     useNewUrlParser: true
   })
-  .then(() => console.log("Mongo Connected..."))
+  .then(() => console.log("MongoDB Connected..."))
   .catch(err => console.log(err));
 
 // Use the routes

@@ -31,11 +31,11 @@ passport.use(
 
       db.User.findOneAndUpdate(
         { googleId: profile.id },
-        { $setOnInsert: { displayName: profile.displayName } },
+        { $set: { displayName: profile.displayName } },
         { new: true, upsert: true, returnNewDocument: true, useFindAndModify: false },
-        (err, doc) => {
+        (err, user) => {
           if (err) console.error(err);
-          return done(null, doc);
+          return done(null, user);
         }
       );
     }

@@ -13,7 +13,7 @@ const UserSchema = new Schema({
   },
   displayName: {
     type: String,
-    required: false
+    required: true
   },
   email: {
     type: String,

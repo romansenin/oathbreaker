@@ -29,8 +29,8 @@ export default class Form extends Component {
   }
 
   handleSubmit(event) {
-    const email = this.state.email;
     const displayName = this.state.displayName;
+    const email = this.state.email;
     const password = this.state.password;
     const password2 = this.state.password2;
 
@@ -39,7 +39,7 @@ export default class Form extends Component {
         let errors = [];
 
         // Check required fields
-        if (!email || !displayName || !password || !password2)
+        if (!displayName || !email || !password || !password2)
           errors.push({ msg: "Please fill in all fields" });
 
         // Check password match
@@ -53,8 +53,14 @@ export default class Form extends Component {
         if (errors.length) this.setState({ errors });
         else
           axios
-            .post("/register", { email, displayName, password, password2 })
-            .then(result => console.log(result.data))
+            .post("/register", { displayName, email, password, password2 })
+            .then(result => {
+              if (result.data.error_msg) {
+                this.setState({ errors: [{ msg: result.data.error_msg }] });
+              } else {
+                console.log(result.data);
+              }
+            })
             .catch(err => console.log(err));
       });
     }
@@ -76,7 +82,7 @@ export default class Form extends Component {
           )}
 
           {this.state.errors.length ? (
-            <ul>
+            <ul style={{ marginLeft: 0 }}>
               {this.state.errors.map((value, index) => {
                 return (
                   <div
@@ -108,16 +114,6 @@ export default class Form extends Component {
                 this.props.view === "login" ? "local-login" : "local-signup"
               }
             >
-              <input
-                type="email"
-                placeholder="Email"
-                onFocus={e => (e.target.placeholder = "")}
-                onClick={e => (e.target.placeholder = "")}
-                onBlur={e => (e.target.placeholder = "Email")}
-                name="email"
-                value={this.state.email}
-                onChange={this.handleInputChange}
-              />
               {this.props.view === "signup" ? (
                 <input
                   type="text"
@@ -132,6 +128,16 @@ export default class Form extends Component {
               ) : (
                 ""
               )}
+              <input
+                type="email"
+                placeholder="Email"
+                onFocus={e => (e.target.placeholder = "")}
+                onClick={e => (e.target.placeholder = "")}
+                onBlur={e => (e.target.placeholder = "Email")}
+                name="email"
+                value={this.state.email}
+                onChange={this.handleInputChange}
+              />
               <input
                 type="password"
                 placeholder="Password"
