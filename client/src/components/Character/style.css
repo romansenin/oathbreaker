@@ -5,6 +5,13 @@
   font-weight: 200;
 }
 
+@font-face {
+  font-family: "berserk";
+  src: url(../../Font/Berserker-Regular.ttf);
+  font-style: normal;
+  font-weight: 50;
+}
+
 ul {
   padding: 0;
   margin-left: 20px;
@@ -32,7 +39,7 @@ ul {
   transition: all 0.8s ease;
   height: 160.85px;
   width: 135px;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .character-select-image:hover {
@@ -41,18 +48,32 @@ ul {
   transform: skew(-5deg, 0deg);
 }
 
+.choose-char-nav-link-btn {
+  cursor: pointer;
+  font-family: "berserk";
+  font-weight: 100;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  color: white;
+  background: black;
+}
+
+.choose-char-nav-link-btn:hover {
+  color: black;
+  background: white;
+}
+
 .character-select-name {
-  padding: 10px;
   position: relative;
   text-align: center;
   left: 0;
   right: 0;
   opacity: 0;
-  display: none;
-  font-family: "metror";
-  font-weight: 200;
+  visibility: visible;
+  font-family: "berserk";
+  font-weight: 100;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-transform: capitalize;
   letter-spacing: 2px;
   -webkit-transition: all 0.8s ease;
@@ -64,8 +85,11 @@ ul {
 .character-select-wrap:hover .character-select-name {
   visibility: visible;
   opacity: 1;
-  font-size: 1.9rem;
+  font-size: 1.5rem;
+  position: relative;
   text-align: center;
+  left: 0;
+  right: 0;
   color: white;
   -webkit-transition: all 0.8s ease;
   -moz-transition: all 0.8s ease;
@@ -77,7 +101,7 @@ ul {
   text-align: center;
   visibility: hidden;
   font-family: "metror";
-  font-weight: 200;
+  font-weight: 500;
   color: #fff;
   font-size: 1.5rem;
   text-transform: capitalize;
