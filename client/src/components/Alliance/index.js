@@ -27,7 +27,7 @@ class Alliance extends Component {
                   <div className="overlay">
                     <div className="text">
                       <h1 id="two">The Vjarr</h1>
-                      The Vjarr Clan. A powerful and affluent warring clan
+                      The Vjarr Clan. A powerful and ruthless warring clan
                       represented by the element of fire.
                     </div>
                   </div>
