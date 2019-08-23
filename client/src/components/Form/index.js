@@ -111,7 +111,7 @@ class Form extends Component {
             <h1>Sign Up for an Account</h1>
           )}
 
-          {this.state.errors.length ? (
+          {this.state.errors.length && this.props.view === "signup" ? (
             <ul style={{ marginLeft: 0 }}>
               {this.state.errors.map((value, index) => {
                 return (
@@ -119,6 +119,7 @@ class Form extends Component {
                     className="alert alert-warning alert-dismissible fade show"
                     role="alert"
                     key={index}
+                    style={{ marginBottom: "5px" }}
                   >
                     {value.msg}
                     <button
@@ -155,6 +156,34 @@ class Form extends Component {
                   value={this.state.displayName}
                   onChange={this.handleInputChange}
                 />
+              ) : (
+                ""
+              )}
+
+              {this.state.errors.length && this.props.view === "login" ? (
+                <ul style={{ marginLeft: 0, width: "100%" }}>
+                  {this.state.errors.map((value, index) => {
+                    return (
+                      <div
+                        className="alert alert-warning alert-dismissible fade show"
+                        role="alert"
+                        key={index}
+                        style={{ marginBottom: 0 }}
+                      >
+                        {value.msg}
+                        <button
+                          type="button"
+                          className="close"
+                          data-dismiss="alert"
+                          aria-label="Close"
+                          style={{ padding: 0, marginRight: "2%" }}
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    );
+                  })}
+                </ul>
               ) : (
                 ""
               )}
