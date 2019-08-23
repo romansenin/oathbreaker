@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import logo from "../../images/google-logo.png";
 
 const axios = require("axios");
 
-export default class Form extends Component {
+class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +12,8 @@ export default class Form extends Component {
       displayName: "",
       password: "",
       password2: "",
-      errors: []
+      errors: [],
+      loginMessage: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,6 +36,7 @@ export default class Form extends Component {
     const password2 = this.state.password2;
 
     if (this.props.view === "signup") {
+      // signup submit
       this.setState({ errors: [] }, () => {
         let errors = [];
 
@@ -58,10 +60,28 @@ export default class Form extends Component {
               if (result.data.error_msg) {
                 this.setState({ errors: [{ msg: result.data.error_msg }] });
               } else {
-                console.log(result.data);
+                // Successfully registered, set loginMessage to true -> re-render -> redirect to login page
+                this.setState(() => ({
+                  loginMessage: true
+                }));
               }
             })
             .catch(err => console.log(err));
+      });
+    } else {
+      // login submit
+      this.setState({ errors: [] }, () => {
+        axios
+          .post("/auth/local", { email, password })
+          .then(result => {
+            if (result.data.error_msg)
+              this.setState({ errors: [{ msg: result.data.error_msg }] });
+            else {
+              // successful login
+              window.location.pathname = "/chooseAllegiance"
+            }
+          })
+          .catch(err => console.log(err));
       });
     }
 
@@ -69,6 +89,17 @@ export default class Form extends Component {
   }
 
   render() {
+    if (this.state.loginMessage) {
+      return (
+        <Redirect
+          to={{
+            pathname: "/login",
+            state: {}
+          }}
+        />
+      );
+    }
+
     return (
       <div className="form-container">
         <form
@@ -81,7 +112,7 @@ export default class Form extends Component {
             <h1>Sign Up for an Account</h1>
           )}
 
-          {this.state.errors.length ? (
+          {this.state.errors.length && this.props.view === "signup" ? (
             <ul style={{ marginLeft: 0 }}>
               {this.state.errors.map((value, index) => {
                 return (
@@ -89,6 +120,7 @@ export default class Form extends Component {
                     className="alert alert-warning alert-dismissible fade show"
                     role="alert"
                     key={index}
+                    style={{ marginBottom: "5px" }}
                   >
                     {value.msg}
                     <button
@@ -128,6 +160,56 @@ export default class Form extends Component {
               ) : (
                 ""
               )}
+
+              {this.state.errors.length && this.props.view === "login" ? (
+                <ul style={{ marginLeft: 0, width: "100%" }}>
+                  {this.state.errors.map((value, index) => {
+                    return (
+                      <div
+                        className="alert alert-warning alert-dismissible fade show"
+                        role="alert"
+                        key={index}
+                        style={{ marginBottom: 0 }}
+                      >
+                        {value.msg}
+                        <button
+                          type="button"
+                          className="close"
+                          data-dismiss="alert"
+                          aria-label="Close"
+                          style={{ padding: 0, marginRight: "2%" }}
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    );
+                  })}
+                </ul>
+              ) : (
+                ""
+              )}
+
+              {this.props.loginMessage ? (
+                <div
+                  className="alert alert-success alert-dismissible fade show"
+                  role="alert"
+                  style={{ width: "100%" }}
+                >
+                  You are now registered and can log in
+                  <button
+                    type="button"
+                    className="close"
+                    data-dismiss="alert"
+                    aria-label="Close"
+                    style={{ padding: 0, marginRight: "2%" }}
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              ) : (
+                ""
+              )}
+
               <input
                 type="email"
                 placeholder="Email"
@@ -194,3 +276,5 @@ export default class Form extends Component {
     );
   }
 }
+
+export default Form;

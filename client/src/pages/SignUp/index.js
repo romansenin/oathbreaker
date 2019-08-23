@@ -1,23 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import "./style.css";
-
-import Heading from "../../components/Heading";
 import Form from "../../components/Form";
 
-export default class SignUp extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      view: "signup"
-    };
-  }
+const SignUp = () => {
+  return (
+    <div className="signup">
+      <Form view="signup" />
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div className="signup">
-        <Heading />
-        <Form view={this.state.view}/>
-      </div>
-    );
-  }
-}
+export default SignUp;

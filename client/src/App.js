@@ -27,6 +27,7 @@ class App extends Component {
 
   componentDidMount() {
     axios.get("/session").then(user => {
+      console.log("user:", user.data);
       this.setState({ user: user.data });
       setTimeout(() => {
         this.setState({ spinner: false });
@@ -36,23 +37,23 @@ class App extends Component {
 
   charClicked = id => {
     var enemyId = id;
-    
-    while(enemyId === id){
+
+    while (enemyId === id) {
       enemyId = Math.floor(Math.random() * 10);
     }
-    
+
     this.setState({
       player: id,
       enemy: enemyId
     });
-  }
+  };
 
   render() {
     return (
       <Router>
         <div>
           <Navbar />
-          <Wrapper fog={this.state.fog}>
+          <Wrapper>
             {this.state.spinner ? (
               <FontAwesome
                 className="spinner"
@@ -79,12 +80,24 @@ class App extends Component {
                 <Route
                   exact
                   path="/selectCharacter"
-                  render={() => <CharacterSelection user={this.state.user} clicked={this.charClicked} history={this.history}/>}
+                  render={() => (
+                    <CharacterSelection
+                      user={this.state.user}
+                      clicked={this.charClicked}
+                      history={this.history}
+                    />
+                  )}
                 />
                 <Route
                   exact
                   path="/battle"
-                  render={() => <BattlePage user={this.state.user} player={this.state.player} enemy={this.state.enemy}/>}
+                  render={() => (
+                    <BattlePage
+                      user={this.state.user}
+                      player={this.state.player}
+                      enemy={this.state.enemy}
+                    />
+                  )}
                 />
               </div>
             )}
