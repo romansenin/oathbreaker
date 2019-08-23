@@ -19,11 +19,11 @@ class Character extends Component {
                         }
                     }
                 />
-                <h2 className="character-select-name">
-                    {this.props.name}</h2>
-                
+
                 <div className="character-select-description">
-                    <NavLink exact to="/battle" className="nav-link" activeClassName="active">Battle</NavLink>
+                    <NavLink exact to="/battle" className="choose-char-nav-link-btn" activeClassName="active">
+                        <span>Choose {this.props.name}</span></NavLink><br>
+                    </br>
                     <span>Stats:</span><br>
                     </br>
                     <span>Health: {this.props.health}</span><br>
