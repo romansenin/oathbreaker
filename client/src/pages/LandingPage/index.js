@@ -52,7 +52,9 @@ export default class LandingPage extends Component {
 
         <div>
           {/* Insta is an actual React component */}
-          <Insta className="insta" />
+          <a href="https://www.instagram.com/oathbreakergame/">
+            <Insta className="insta" />
+          </a>
         </div>
 
         <Quote />
