@@ -33,7 +33,6 @@
     "react-fontawesome": "^1.6.1",
     "react-native": "^0.60.5",
     "react-native-sound": "^0.11.0",
-
     "react-router-dom": "^5.0.1"
   }
 }
