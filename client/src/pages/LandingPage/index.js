@@ -18,6 +18,17 @@ export default class LandingPage extends Component {
     return (
       <div className="landing-wrapper">
         <div className="container">
+          <div class="light">
+            <div class="flare one">
+              <div class="flare two">
+                <div class="flare five" />
+                <div class="flare six" />
+                <div class="flare three">
+                  <div class="flare four" />
+                </div>
+              </div>
+            </div>
+          </div>
           <h1 className="title">OathBreaker</h1>
           <h2 className="sub-title">Choose Your Allegiance</h2>
           <p className="summary">
