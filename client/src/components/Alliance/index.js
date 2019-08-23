@@ -16,6 +16,7 @@ class Alliance extends Component {
                 <div className="container">
                   <div className="overlay">
                     <div className="text">
+                      <h1 id="one">The Triumvate</h1>
                       The Triumvate was a peaceful union of three lesser clans,
                       represented by the element of water.
                     </div>
@@ -25,6 +26,7 @@ class Alliance extends Component {
                 <div className="container">
                   <div className="overlay">
                     <div className="text">
+                      <h1 id="two">The Vjarr</h1>
                       The Vjarr Clan. A powerful and affluent warring clan
                       represented by the element of fire.
                     </div>
