@@ -45,7 +45,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-image: linear-gradient();
 }
 
 #two {
@@ -59,7 +58,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-image: linear-gradient();
 }
 .text {
   padding: 60px 0 0 20px;
@@ -72,5 +70,4 @@
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-image: linear-gradient();
 }
