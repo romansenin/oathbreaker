@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from "react-router-dom";
 import './style.css';
+import './button.css';
 
 class Character extends Component {
     state = {
@@ -21,8 +22,10 @@ class Character extends Component {
                 />
 
                 <div className="character-select-description">
-                    <NavLink exact to="/battle" className="choose-char-nav-link-btn" activeClassName="active">
-                        <span>Choose {this.props.name}</span></NavLink><br>
+                    <NavLink exact to="/battle" className="bttn-stretch bttn-lg bttn-primary" activeClassName="active">
+                        FIGHT!</NavLink><br>
+                    </br>
+                    <span className="character-select-name">{this.props.name}</span><br>
                     </br>
                     <span>Stats:</span><br>
                     </br>
