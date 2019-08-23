@@ -56,7 +56,7 @@ export default class Form extends Component {
             .post("/register", { displayName, email, password, password2 })
             .then(result => {
               if (result.data.error_msg) {
-                console.log(result.data.error_msg)
+                this.setState({ errors: [{ msg: result.data.error_msg }] });
               } else {
                 console.log(result.data);
               }
@@ -82,7 +82,7 @@ export default class Form extends Component {
           )}
 
           {this.state.errors.length ? (
-            <ul>
+            <ul style={{ marginLeft: 0 }}>
               {this.state.errors.map((value, index) => {
                 return (
                   <div
