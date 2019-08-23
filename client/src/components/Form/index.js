@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import logo from "../../images/google-logo.png";
 
 const axios = require("axios");
 
-export default class Form extends Component {
+class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +12,8 @@ export default class Form extends Component {
       displayName: "",
       password: "",
       password2: "",
-      errors: []
+      errors: [],
+      loginMessage: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,6 +36,7 @@ export default class Form extends Component {
     const password2 = this.state.password2;
 
     if (this.props.view === "signup") {
+      // signup submit
       this.setState({ errors: [] }, () => {
         let errors = [];
 
@@ -58,10 +60,27 @@ export default class Form extends Component {
               if (result.data.error_msg) {
                 this.setState({ errors: [{ msg: result.data.error_msg }] });
               } else {
-                console.log(result.data);
+                // Successfully registered, set loginMessage to true -> re-render -> redirect to login page
+                this.setState(() => ({
+                  loginMessage: true
+                }));
               }
             })
             .catch(err => console.log(err));
+      });
+    } else {
+      // login submit
+      this.setState({ errors: [] }, () => {
+        axios
+          .post("/auth/local", { email, password })
+          .then(result => {
+            if (result.data.error_msg)
+              this.setState({ errors: [{ msg: result.data.error_msg }] });
+            else {
+              // successful login
+            }
+          })
+          .catch(err => console.log(err));
       });
     }
 
@@ -69,6 +88,17 @@ export default class Form extends Component {
   }
 
   render() {
+    if (this.state.loginMessage) {
+      return (
+        <Redirect
+          to={{
+            pathname: "/login",
+            state: {}
+          }}
+        />
+      );
+    }
+
     return (
       <div className="form-container">
         <form
@@ -128,6 +158,28 @@ export default class Form extends Component {
               ) : (
                 ""
               )}
+
+              {this.props.loginMessage ? (
+                <div
+                  className="alert alert-success alert-dismissible fade show"
+                  role="alert"
+                  style={{ width: "100%" }}
+                >
+                  You are now registered and can log in
+                  <button
+                    type="button"
+                    className="close"
+                    data-dismiss="alert"
+                    aria-label="Close"
+                    style={{ padding: 0, marginRight: "2%" }}
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              ) : (
+                ""
+              )}
+
               <input
                 type="email"
                 placeholder="Email"
@@ -194,3 +246,5 @@ export default class Form extends Component {
     );
   }
 }
+
+export default Form;

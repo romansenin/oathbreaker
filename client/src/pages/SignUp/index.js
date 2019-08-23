@@ -16,7 +16,7 @@ export default class SignUp extends Component {
     return (
       <div className="signup">
         <Heading />
-        <Form view={this.state.view}/>
+        <Form view={this.state.view} />
       </div>
     );
   }

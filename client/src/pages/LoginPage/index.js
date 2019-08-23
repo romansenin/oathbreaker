@@ -1,24 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
+import { withRouter } from "react-router-dom";
 import "./Login.css";
 
 import Heading from "../../components/Heading";
 import Form from "../../components/Form";
 
-export default class LoginPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      view: "login"
-    };
-  }
-  render() {
-    return (
-      <div className="login-wrapper">
-        <div className="login-container">
-          <Heading />
-          <Form view={this.state.view} />
-        </div>
+const LoginPage = props => {
+  return (
+    <div className="login-wrapper">
+      <div className="login-container">
+        <Heading />
+        <Form view="login" loginMessage={props.location.state ? true : false} />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default withRouter(LoginPage);

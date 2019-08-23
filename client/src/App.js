@@ -52,7 +52,7 @@ class App extends Component {
       <Router>
         <div>
           <Navbar />
-          <Wrapper fog={this.state.fog}>
+          <Wrapper>
             {this.state.spinner ? (
               <FontAwesome
                 className="spinner"
