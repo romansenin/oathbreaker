@@ -20,8 +20,8 @@ class App extends Component {
     this.state = {
       user: undefined,
       spinner: true,
-      player: 0,
-      enemy: 1
+      player: 1,
+      enemy: 2
     };
   }
 
