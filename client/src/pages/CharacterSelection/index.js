@@ -18,7 +18,7 @@ export default class CharacterSelection extends Component {
       return <Redirect to="/allegiance" />;
     return (
       <div className="character-selection">
-        <h1>Character</h1>
+        <h1>Choose Character</h1>
         <ul>
           {characters.map((value, index) => {
             return value.faction === this.props.allegiance ? (

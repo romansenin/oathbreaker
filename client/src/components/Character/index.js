@@ -1,30 +1,42 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import "./style.css";
 import "./button.css";
 
 class Character extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      battleRedirect: false
+    };
+    this.handleSelect = this.handleSelect.bind(this);
+  }
+
+  handleSelect() {
+    this.props.clicked(this.props.id);
+    this.setState({ battleRedirect: true });
+  }
+
   render() {
+    if (this.state.battleRedirect) return <Redirect to="/battle" />;
     return (
       <div className="character-select-wrap">
         <img
           className="character-select-image"
           alt={this.props.name}
           src={this.props.image}
-          onClick={() => {
-            this.props.clicked(this.props.id);
-          }}
         />
 
         <div className="character-select-description">
-          <NavLink
+          <button
             exact
             to="/battle"
             className="bttn-stretch bttn-lg bttn-primary"
             activeClassName="active"
+            onClick={this.handleSelect}
           >
             FIGHT!
-          </NavLink>
+          </button>
           <br />
           <span className="character-select-name">{this.props.name}</span>
           <br />
