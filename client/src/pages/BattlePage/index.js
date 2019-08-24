@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 //Development source for characters
 import characters from "../../characters";
 import Fighter from "../../components/Fighter";
+import MessageBox from "../../components/MessageBox";
 import "./style.css";
 
 export default class BattlePage extends Component {
@@ -10,7 +11,8 @@ export default class BattlePage extends Component {
     super(props);
     this.state = {
       characters: characters,
-      state: 0
+      state: 0,
+      message: "Fight!!!"
     };
   }
 
@@ -59,17 +61,25 @@ export default class BattlePage extends Component {
       }
     } else {
       if(atk.health > def.health){
-        alert("Enemy vanquished!");
+        this.winner("Enemy vanquished!");
       } else {
-        alert("The foe has won...");
+        this.winner("The foe has won...");
       }
-      window.location.pathname = "/character";
     }
 
     this.setState({
       characters: newCharacters
     });
   };
+
+  winner = (name) => {
+    this.setState({
+      message: name
+    });
+    setTimeout(() => {
+      window.location.pathname = "/character";
+    }, 5000);
+  }
 
   render() {
     if (!this.props.user) return <Redirect to="/login" />;
@@ -78,7 +88,7 @@ export default class BattlePage extends Component {
       <div className="battle-page">
         <h1>BattlePage</h1>
         <div id="battle-bg" className="container">
-          <div className="row">
+          <div className="row d-flex justify-content-center">
             <div className="col-md-6 text-center">
               <Fighter
                 name={characters[this.props.player - 1].name}
@@ -109,6 +119,7 @@ export default class BattlePage extends Component {
               />
             </div>
           </div>
+          <MessageBox message={this.state.message}/>
         </div>
       </div>
     );
