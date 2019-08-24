@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './style.css';
 
-class Character extends Component{
+class Character extends Component {
     state = {
         ids: [1, 2, 3, 4]
     };
@@ -12,28 +12,28 @@ class Character extends Component{
     //     WebkitTransition: 'all', // note the capital 'W' here
     //     msTransition: 'all' // 'ms' is the only lowercase vendor prefix
     //   };
-      
+
     // ReactDOM.render(<div style={divStyle}>Hello World!</div>, mountNode);
 
-    render(){
-        var newHealth = (this.props.health/this.props.maxHealth) * 100;
-        
+    render() {
+        var newHealth = (this.props.health / this.props.maxHealth) * 100;
+
         return (
             <div className="char-box">
-                <p>{this.props.name}</p>
-                <hr/>
+                <h1 className="character-battle-name">{this.props.name}</h1>
+                <hr />
                 <div className="progress">
-                    <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style={{"width" : `${newHealth}%`}} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div id="healthbar" className="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style={{ "width": `${newHealth}%` }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <hr/>
+                <hr />
                 <div className="img-container">
                     <img
                         alt={this.props.name}
                         src={this.props.image}
                     />
                 </div>
-                {this.props.handleAttack ? <button onClick={() => this.props.handleAttack(this.props.id, this.props.target)}>Attack</button> : ""}
-                
+                {this.props.handleAttack ? <img className="attack-bttn" src="https://opengameart.org/sites/default/files/Attack.png" onClick={() => this.props.handleAttack(this.props.id, this.props.target)}></img>: ""}
+
             </div>
         );
     }
