@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import characters from "../../characters";
 import Fighter from "../../components/Fighter";
 import MessageBox from "../../components/MessageBox";
+import Navbar from "../../components/Navbar";
 import "./style.css";
 
 export default class BattlePage extends Component {
@@ -32,12 +33,10 @@ export default class BattlePage extends Component {
     if (atk.health > 0 && def.health > 0) {
       for (let i = 0; i < newCharacters.length; i++) {
         if (newCharacters[i].id === defId) {
-          console.log(`${atk.name} attacks ${def.name}`);
-          console.log(newCharacters[i]);
           //Check for dodge
           var defDodge = Math.floor(Math.random() * 100) + 1;
           var defDamage = atk.attack;
-          if(defDodge < newCharacters[i].agility){
+          if (defDodge < newCharacters[i].agility) {
             defDamage = 1;
           }
           newCharacters[i].health -= defDamage;
@@ -46,11 +45,10 @@ export default class BattlePage extends Component {
           }
         }
         if (newCharacters[i].id === atkId) {
-          console.log(`${def.name} counterattacks ${atk.name}`);
           //Check for dodge
           var atkDodge = Math.floor(Math.random() * 100) + 1;
           var atkDamage = def.attack;
-          if(atkDodge < newCharacters[i].agility){
+          if (atkDodge < newCharacters[i].agility) {
             atkDamage = 1;
           }
           newCharacters[i].health -= atkDamage;
@@ -60,7 +58,7 @@ export default class BattlePage extends Component {
         }
       }
     } else {
-      if(atk.health > def.health){
+      if (atk.health > def.health) {
         this.winner("Enemy vanquished!");
       } else {
         this.winner("The foe has won...");
@@ -72,20 +70,21 @@ export default class BattlePage extends Component {
     });
   };
 
-  winner = (name) => {
+  winner = name => {
     this.setState({
       message: name
     });
     setTimeout(() => {
       window.location.pathname = "/character";
     }, 2000);
-  }
+  };
 
   render() {
     if (!this.props.user) return <Redirect to="/login" />;
     if (this.props.player === undefined) return <Redirect to="/character" />;
     return (
       <div className="battle-page">
+        <Navbar user={this.props.user} view="battle" />
         <h1>BattlePage</h1>
         <div id="battle-bg" className="container">
           <div className="row d-flex justify-content-center">
@@ -119,7 +118,7 @@ export default class BattlePage extends Component {
               />
             </div>
           </div>
-          <MessageBox message={this.state.message}/>
+          <MessageBox message={this.state.message} />
         </div>
       </div>
     );

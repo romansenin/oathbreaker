@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 
+import Navbar from "../../components/Navbar";
 import Character from "../../components/Character";
 import characters from "../../characters";
 
@@ -18,6 +19,7 @@ export default class CharacterSelection extends Component {
       return <Redirect to="/allegiance" />;
     return (
       <div className="character-selection">
+        <Navbar user={this.props.user} view="character"/>
         <h1>Choose Character</h1>
         <ul>
           {characters.map((value, index) => {
