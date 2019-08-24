@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 //Development source for characters
 import characters from "../../characters";
 import Fighter from "../../components/Fighter";
+import MessageBox from "../../components/MessageBox";
 import "./style.css";
 
 export default class BattlePage extends Component {
@@ -10,12 +11,12 @@ export default class BattlePage extends Component {
     super(props);
     this.state = {
       characters: characters,
-      state: 0
+      state: 0,
+      message: "Fight!!!"
     };
   }
 
-  //Handle counter attack from defender
-  //Add evasion mechanic
+  //Handles interaction between characters
   handleAttack = (atkId, defId) => {
     var newCharacters = this.state.characters;
     var atk, def;
@@ -33,32 +34,52 @@ export default class BattlePage extends Component {
         if (newCharacters[i].id === defId) {
           console.log(`${atk.name} attacks ${def.name}`);
           console.log(newCharacters[i]);
-          newCharacters[i].health -= atk.attack - def.defense;
+          //Check for dodge
+          var defDodge = Math.floor(Math.random() * 100) + 1;
+          var defDamage = atk.attack;
+          if(defDodge < newCharacters[i].agility){
+            defDamage = 1;
+          }
+          newCharacters[i].health -= defDamage;
           if (newCharacters[i].health < 0) {
             newCharacters[i].health = 0;
           }
         }
         if (newCharacters[i].id === atkId) {
           console.log(`${def.name} counterattacks ${atk.name}`);
-          var damage =
-            def.attack - (atk.defense + (Math.floor(Math.random() * 5) + 1));
-          if (damage > 0) {
-            newCharacters[i].health -= damage;
+          //Check for dodge
+          var atkDodge = Math.floor(Math.random() * 100) + 1;
+          var atkDamage = def.attack;
+          if(atkDodge < newCharacters[i].agility){
+            atkDamage = 1;
           }
+          newCharacters[i].health -= atkDamage;
           if (newCharacters[i].health < 0) {
             newCharacters[i].health = 0;
           }
         }
       }
     } else {
-      alert("Battle over!");
-      window.location.pathname = "/character";
+      if(atk.health > def.health){
+        this.winner("Enemy vanquished!");
+      } else {
+        this.winner("The foe has won...");
+      }
     }
 
     this.setState({
       characters: newCharacters
     });
   };
+
+  winner = (name) => {
+    this.setState({
+      message: name
+    });
+    setTimeout(() => {
+      window.location.pathname = "/character";
+    }, 5000);
+  }
 
   render() {
     if (!this.props.user) return <Redirect to="/login" />;
@@ -67,7 +88,7 @@ export default class BattlePage extends Component {
       <div className="battle-page">
         <h1>BattlePage</h1>
         <div id="battle-bg" className="container">
-          <div className="row">
+          <div className="row d-flex justify-content-center">
             <div className="col-md-6 text-center">
               <Fighter
                 name={characters[this.props.player - 1].name}
@@ -98,6 +119,7 @@ export default class BattlePage extends Component {
               />
             </div>
           </div>
+          <MessageBox message={this.state.message}/>
         </div>
       </div>
     );
