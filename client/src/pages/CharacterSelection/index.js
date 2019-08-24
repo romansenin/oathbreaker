@@ -18,7 +18,7 @@ export default class CharacterSelection extends Component {
       return <Redirect to="/allegiance" />;
     return (
       <div className="character-selection">
-        <h1>Character</h1>
+        <h1>Choose Character</h1>
         <ul>
           {characters.map((value, index) => {
             return value.faction === this.props.allegiance ? (
@@ -38,25 +38,6 @@ export default class CharacterSelection extends Component {
             );
           })}
         </ul>
-        {/* <ul>
-          {characters.map((value, index) => {
-            return value.faction !== this.props.allegiance ? (
-              <Character
-                key={index}
-                id={value.id}
-                name={value.name}
-                image={value.image}
-                health={value.health}
-                attack={value.attack}
-                defense={value.defense}
-                agility={value.agility}
-                clicked={this.props.clicked}
-              />
-            ) : (
-              ""
-            );
-          })}
-        </ul> */}
       </div>
     );
   }

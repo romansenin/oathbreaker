@@ -29,7 +29,9 @@ export default class LandingPage extends Component {
               </div>
             </div>
           </div>
-          <h1 className="title">OathBreaker</h1>
+          <Link to="/">
+            <span className="title">OathBreaker</span>
+          </Link>
           <h2 className="sub-title">Choose Your Allegiance</h2>
           <p className="summary">
             Journey into the world of Vidas in the age of the OathBreaker.

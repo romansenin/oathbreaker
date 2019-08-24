@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 
 import Wrapper from "./components/Wrapper";
-import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 import SignUp from "./pages/SignUp";
@@ -30,11 +29,10 @@ class App extends Component {
 
   componentDidMount() {
     axios.get("/session").then(user => {
-      console.log("user:", user.data);
       this.setState({ user: user.data });
       setTimeout(() => {
         this.setState({ spinner: false });
-      }, 1000);
+      }, 500);
     });
   }
 
@@ -58,7 +56,6 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Navbar />
           <Wrapper>
             {this.state.spinner ? (
               <FontAwesome

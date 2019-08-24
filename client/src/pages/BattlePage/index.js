@@ -78,7 +78,7 @@ export default class BattlePage extends Component {
     });
     setTimeout(() => {
       window.location.pathname = "/character";
-    }, 5000);
+    }, 2000);
   }
 
   render() {
