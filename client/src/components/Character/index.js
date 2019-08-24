@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "./style.css";
+import "./button.css";
 
 class Character extends Component {
   render() {
@@ -19,11 +20,13 @@ class Character extends Component {
           <NavLink
             exact
             to="/battle"
-            className="choose-char-nav-link-btn"
+            className="bttn-stretch bttn-lg bttn-primary"
             activeClassName="active"
           >
-            <span>Choose {this.props.name}</span>
+            FIGHT!
           </NavLink>
+          <br />
+          <span className="character-select-name">{this.props.name}</span>
           <br />
           <span>Stats:</span>
           <br />
