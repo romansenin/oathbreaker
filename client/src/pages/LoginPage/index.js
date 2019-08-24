@@ -8,7 +8,12 @@ const LoginPage = props => {
   return (
     <div className="login-wrapper">
       <div className="login-container">
-        <Form view="login" loginMessage={props.location.state ? true : false} />
+        <Form
+          view="login"
+          loginMessage={
+            props.location.state && props.location.state.loginMessage
+          }
+        />
       </div>
     </div>
   );

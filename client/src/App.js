@@ -20,9 +20,12 @@ class App extends Component {
     this.state = {
       user: undefined,
       spinner: true,
-      player: 1,
-      enemy: 2
+      allegiance: undefined,
+      player: undefined,
+      enemy: undefined
     };
+    this.setAllegiance = this.setAllegiance.bind(this);
+    this.charClicked = this.charClicked.bind(this);
   }
 
   componentDidMount() {
@@ -35,18 +38,21 @@ class App extends Component {
     });
   }
 
-  charClicked = id => {
-    var enemyId = id;
+  setAllegiance(allegiance) {
+    this.setState({ allegiance });
+  }
 
-    while (enemyId === id) {
-      enemyId = Math.floor(Math.random() * 10);
-    }
+  charClicked(id) {
+    const enemyId =
+      id <= 5
+        ? Math.floor(Math.random() * (11 - 6) + 6)
+        : Math.floor(Math.random() * (6 - 1) + 1);
 
     this.setState({
       player: id,
       enemy: enemyId
     });
-  };
+  }
 
   render() {
     return (
@@ -69,22 +75,22 @@ class App extends Component {
                 <Route exact path="/signup" render={() => <SignUp />} />
                 <Route
                   exact
-                  path="/chooseAllegiance"
+                  path="/allegiance"
                   render={() => (
                     <ChooseAllegiance
                       user={this.state.user}
-                      toggleFog={this.toggleFog}
+                      setAllegiance={this.setAllegiance}
                     />
                   )}
                 />
                 <Route
                   exact
-                  path="/selectCharacter"
+                  path="/character"
                   render={() => (
                     <CharacterSelection
                       user={this.state.user}
                       clicked={this.charClicked}
-                      history={this.history}
+                      allegiance={this.state.allegiance}
                     />
                   )}
                 />

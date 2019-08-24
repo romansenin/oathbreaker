@@ -68,7 +68,7 @@ const characters = [
     },
     {
         "id": 7,
-        "name": "Sentinal",
+        "name": "Sentinel",
         "image": require("./images/sentinal.jpg"),
         "faction": 1,
         "health": 200,

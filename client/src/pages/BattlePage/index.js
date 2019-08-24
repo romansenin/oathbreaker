@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 //Development source for characters
 import characters from "../../characters";
 import Fighter from "../../components/Fighter";
@@ -39,8 +40,9 @@ export default class BattlePage extends Component {
         }
         if (newCharacters[i].id === atkId) {
           console.log(`${def.name} counterattacks ${atk.name}`);
-          var damage = def.attack - (atk.defense + (Math.floor(Math.random() * 5) + 1));
-          if(damage > 0){
+          var damage =
+            def.attack - (atk.defense + (Math.floor(Math.random() * 5) + 1));
+          if (damage > 0) {
             newCharacters[i].health -= damage;
           }
           if (newCharacters[i].health < 0) {
@@ -50,7 +52,7 @@ export default class BattlePage extends Component {
       }
     } else {
       alert("Battle over!");
-      window.location.pathname = "/selectcharacter";
+      window.location.pathname = "/character";
     }
 
     this.setState({
@@ -59,6 +61,8 @@ export default class BattlePage extends Component {
   };
 
   render() {
+    if (!this.props.user) return <Redirect to="/login" />;
+    if (this.props.player === undefined) return <Redirect to="/character" />;
     return (
       <div className="battle-page">
         <h1>BattlePage</h1>

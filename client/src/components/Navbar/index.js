@@ -24,10 +24,10 @@ const Navbar = () => {
             <NavLink exact to="/signup" className="nav-link" activeClassName="active">Sign Up</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink exact to="/chooseAllegiance" className="nav-link" activeClassName="active">Choose Allegiance</NavLink>
+            <NavLink exact to="/allegiance" className="nav-link" activeClassName="active">Choose Allegiance</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink exact to="/selectCharacter" className="nav-link" activeClassName="active">Choose Character</NavLink>
+            <NavLink exact to="/character" className="nav-link" activeClassName="active">Choose Character</NavLink>
           </li>
           <li className="nav-item">
             <NavLink exact to="/battle" className="nav-link" activeClassName="active">Battle</NavLink>
