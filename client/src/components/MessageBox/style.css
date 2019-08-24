@@ -1,0 +1,17 @@
+.m-box {
+    border: solid 2px black;
+    height: 75px;
+    opacity: 0.75;
+    z-index: 0;
+    background-color: #fff;
+    text-align: center;
+    font-family: "berserk";
+    font-weight: 100;
+    color: black;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+  }
