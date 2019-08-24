@@ -32,7 +32,7 @@ class Character extends Component {
                         src={this.props.image}
                     />
                 </div>
-                {this.props.handleAttack ? <img className="attack-bttn" src="https://opengameart.org/sites/default/files/Attack.png" onClick={() => this.props.handleAttack(this.props.id, this.props.target)}></img>: ""}
+                {this.props.handleAttack ? <img className="attack-bttn" src="https://opengameart.org/sites/default/files/Attack.png" alt="Attack" onClick={() => this.props.handleAttack(this.props.id, this.props.target)}></img>: ""}
 
             </div>
         );
