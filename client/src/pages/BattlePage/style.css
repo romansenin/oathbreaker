@@ -1,5 +1,11 @@
 #battle-bg {
   border: solid 2px black;
+  margin-top: -40px;
+}
+
+.battle-page {
+  max-height: 100vh;
+  overflow-y: hidden;
 }
 
 .battle-page .char-box {
