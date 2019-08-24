@@ -1,7 +1,7 @@
-#battle-bg{
-    border: solid 2px black;
+#battle-bg {
+  border: solid 2px black;
 }
 
 .battle-page .char-box {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.75);
 }
