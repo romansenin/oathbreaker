@@ -2,22 +2,8 @@ import React, { Component } from "react";
 import "./style.css";
 
 class Character extends Component {
-  state = {
-    ids: [1, 2, 3, 4]
-  };
-
-  // var divStyle = {
-  //     color: 'white',
-  //     backgroundImage: 'url(' + imgUrl + ')',
-  //     WebkitTransition: 'all', // note the capital 'W' here
-  //     msTransition: 'all' // 'ms' is the only lowercase vendor prefix
-  //   };
-
-  // ReactDOM.render(<div style={divStyle}>Hello World!</div>, mountNode);
-
   render() {
-    var newHealth = (this.props.health / this.props.maxHealth) * 100;
-
+    const newHealth = (this.props.health / this.props.maxHealth) * 100;
 
     return (
       <div className="char-box">
@@ -38,7 +24,7 @@ class Character extends Component {
         <div className="img-container">
           <img alt={this.props.name} src={this.props.image} />
         </div>
-        {this.props.handleAttack ? (
+        {this.props.handleAttack && !this.props.gameOver ? (
           <img
             className="attack-bttn"
             src="https://opengameart.org/sites/default/files/Attack.png"

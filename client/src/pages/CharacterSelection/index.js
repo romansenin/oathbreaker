@@ -10,7 +10,7 @@ import "./style.css";
 export default class CharacterSelection extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {characters};
   }
 
   render() {
@@ -22,7 +22,7 @@ export default class CharacterSelection extends Component {
         <Navbar user={this.props.user} view="character"/>
         <h1>Choose Character</h1>
         <ul>
-          {characters.map((value, index) => {
+          {this.state.characters.map((value, index) => {
             return value.faction === this.props.allegiance ? (
               <Character
                 key={index}

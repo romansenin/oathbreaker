@@ -1,17 +1,27 @@
 .m-box {
-    border: solid 2px black;
-    height: 75px;
-    opacity: 0.75;
-    z-index: 0;
-    background-color: #fff;
-    text-align: center;
-    font-family: "berserk";
-    font-weight: 100;
-    color: black;
-    font-size: 1.8rem;
-    text-transform: capitalize;
-    letter-spacing: 2px;
-    margin-top: 20px;
-    position: relative;
-    z-index: 1;
-  }
+  padding-top: 5px;
+  border: solid 2px black;
+  height: 95px;
+  opacity: 0.75;
+  z-index: 0;
+  background-color: #fff;
+  text-align: center;
+  font-family: "berserk";
+  font-weight: 100;
+  color: black;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.m-box ul {
+  margin: 0;
+  padding: 0;
+}
+
+.m-box ul li {
+  list-style: none;
+}
