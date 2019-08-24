@@ -29,10 +29,7 @@ class Character extends Component {
 
         <div className="character-select-description">
           <button
-            exact
-            to="/battle"
             className="bttn-stretch bttn-lg bttn-primary"
-            activeClassName="active"
             onClick={this.handleSelect}
           >
             FIGHT!

@@ -38,25 +38,6 @@ export default class CharacterSelection extends Component {
             );
           })}
         </ul>
-        {/* <ul>
-          {characters.map((value, index) => {
-            return value.faction !== this.props.allegiance ? (
-              <Character
-                key={index}
-                id={value.id}
-                name={value.name}
-                image={value.image}
-                health={value.health}
-                attack={value.attack}
-                defense={value.defense}
-                agility={value.agility}
-                clicked={this.props.clicked}
-              />
-            ) : (
-              ""
-            );
-          })}
-        </ul> */}
       </div>
     );
   }
