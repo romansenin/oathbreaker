@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
+import { createBrowserHistory } from 'history'
 import logo from "../../images/google-logo.png";
 
 const axios = require("axios");
+const history = createBrowserHistory();
 
 class Form extends Component {
   constructor(props) {
@@ -13,7 +15,8 @@ class Form extends Component {
       password: "",
       password2: "",
       errors: [],
-      loginMessage: false
+      loginRedirect: false,
+      loginMessage: this.props.loginMessage
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -62,7 +65,7 @@ class Form extends Component {
               } else {
                 // Successfully registered, set loginMessage to true -> re-render -> redirect to login page
                 this.setState(() => ({
-                  loginMessage: true
+                  loginRedirect: true
                 }));
               }
             })
@@ -70,7 +73,7 @@ class Form extends Component {
       });
     } else {
       // login submit
-      this.setState({ errors: [] }, () => {
+      this.setState({ errors: [], loginMessage: false }, () => {
         axios
           .post("/auth/local", { email, password })
           .then(result => {
@@ -78,7 +81,7 @@ class Form extends Component {
               this.setState({ errors: [{ msg: result.data.error_msg }] });
             else {
               // successful login
-              window.location.pathname = "/chooseAllegiance"
+              window.location.pathname = "/allegiance";
             }
           })
           .catch(err => console.log(err));
@@ -89,15 +92,22 @@ class Form extends Component {
   }
 
   render() {
-    if (this.state.loginMessage) {
+    if (this.state.loginRedirect) {
       return (
         <Redirect
           to={{
             pathname: "/login",
-            state: {}
+            state: { loginMessage: true }
           }}
         />
       );
+    }
+
+    if (this.state.loginMessage) {
+      history.replace({
+        pathname: "/login",
+        state: { loginMessage: false }
+      });
     }
 
     return (
@@ -189,7 +199,7 @@ class Form extends Component {
                 ""
               )}
 
-              {this.props.loginMessage ? (
+              {this.state.loginMessage ? (
                 <div
                   className="alert alert-success alert-dismissible fade show"
                   role="alert"

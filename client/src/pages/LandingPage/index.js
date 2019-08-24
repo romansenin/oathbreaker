@@ -18,24 +18,26 @@ export default class LandingPage extends Component {
     return (
       <div className="landing-wrapper">
         <div className="container">
-          <div class="light">
-            <div class="flare one">
-              <div class="flare two">
-                <div class="flare five" />
-                <div class="flare six" />
-                <div class="flare three">
-                  <div class="flare four" />
+          <div className="light">
+            <div className="flare one">
+              <div className="flare two">
+                <div className="flare five" />
+                <div className="flare six" />
+                <div className="flare three">
+                  <div className="flare four" />
                 </div>
               </div>
             </div>
           </div>
-          <h1 className="title">OathBreaker</h1>
+          <Link to="/">
+            <span className="title">OathBreaker</span>
+          </Link>
           <h2 className="sub-title">Choose Your Allegiance</h2>
           <p className="summary">
             Journey into the world of Vidas in the age of the OathBreaker.
             Engage in battles full of dynamic heroes and compelling stories.
           </p>
-          <Link to="/login" className="btn btn--border">
+          <Link to="/allegiance" className="btn btn--border">
             Join The Fight <span />
           </Link>
         </div>

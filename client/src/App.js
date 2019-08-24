@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 
 import Wrapper from "./components/Wrapper";
-import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 import SignUp from "./pages/SignUp";
@@ -20,39 +19,43 @@ class App extends Component {
     this.state = {
       user: undefined,
       spinner: true,
-      player: 1,
-      enemy: 2
+      allegiance: undefined,
+      player: undefined,
+      enemy: undefined
     };
+    this.setAllegiance = this.setAllegiance.bind(this);
+    this.charClicked = this.charClicked.bind(this);
   }
 
   componentDidMount() {
     axios.get("/session").then(user => {
-      console.log("user:", user.data);
       this.setState({ user: user.data });
       setTimeout(() => {
         this.setState({ spinner: false });
-      }, 1000);
+      }, 500);
     });
   }
 
-  charClicked = id => {
-    var enemyId = id;
+  setAllegiance(allegiance) {
+    this.setState({ allegiance });
+  }
 
-    while (enemyId === id) {
-      enemyId = Math.floor(Math.random() * 10);
-    }
+  charClicked(id) {
+    const enemyId =
+      id <= 5
+        ? Math.floor(Math.random() * (11 - 6) + 6)
+        : Math.floor(Math.random() * (6 - 1) + 1);
 
     this.setState({
       player: id,
       enemy: enemyId
     });
-  };
+  }
 
   render() {
     return (
       <Router>
         <div>
-          <Navbar />
           <Wrapper>
             {this.state.spinner ? (
               <FontAwesome
@@ -69,22 +72,22 @@ class App extends Component {
                 <Route exact path="/signup" render={() => <SignUp />} />
                 <Route
                   exact
-                  path="/chooseAllegiance"
+                  path="/allegiance"
                   render={() => (
                     <ChooseAllegiance
                       user={this.state.user}
-                      toggleFog={this.toggleFog}
+                      setAllegiance={this.setAllegiance}
                     />
                   )}
                 />
                 <Route
                   exact
-                  path="/selectCharacter"
+                  path="/character"
                   render={() => (
                     <CharacterSelection
                       user={this.state.user}
                       clicked={this.charClicked}
-                      history={this.history}
+                      allegiance={this.state.allegiance}
                     />
                   )}
                 />

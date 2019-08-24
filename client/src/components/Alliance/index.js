@@ -1,8 +1,24 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import "./style.css";
 
 class Alliance extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      characterRedirect: false
+    };
+  }
+
+  handleSelect = () => {
+    this.props.setAllegiance(this.props.type);
+    this.setState(() => ({ characterRedirect: true }));
+  };
+
   render() {
+    if (this.state.characterRedirect) {
+      return <Redirect to="/character" />;
+    }
     return (
       <div className="alliance-container">
         <section className="fog-wrapper">
@@ -13,7 +29,7 @@ class Alliance extends Component {
           >
             <div className={!this.props.type ? "rain" : ""}>
               {!this.props.type ? (
-                <div className="container">
+                <div className="container" onClick={this.handleSelect}>
                   <div className="overlay">
                     <div className="text">
                       <h1 id="one">The Triumvate</h1>
@@ -23,7 +39,7 @@ class Alliance extends Component {
                   </div>
                 </div>
               ) : (
-                <div className="container">
+                <div className="container" onClick={this.handleSelect}>
                   <div className="overlay">
                     <div className="text">
                       <h1 id="two">The Vjarr</h1>
