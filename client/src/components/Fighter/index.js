@@ -18,6 +18,7 @@ class Character extends Component {
   render() {
     var newHealth = (this.props.health / this.props.maxHealth) * 100;
 
+
     return (
       <div className="char-box">
         <h1 className="character-battle-name">{this.props.name}</h1>

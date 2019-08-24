@@ -25,12 +25,13 @@
   font-family: "berserk";
   font-weight: 100;
   color: black;
-  font-size: 1.8rem;
+  font-size: 2rem;
   text-transform: capitalize;
-  letter-spacing: 2px;
+  letter-spacing: 1.9px;
   margin-top: 20px;
   position: relative;
   z-index: 1;
+  text-shadow: 5px 3px 4px grey;
 }
 
 .attack-bttn {
@@ -43,10 +44,12 @@
   margin-top: 20px;
   position: relative;
   z-index: 1;
+  transform: rotate(345deg);
 }
 
 .attack-bttn:hover {
   cursor: pointer;
   position: relative;
   z-index: 1;
+  transform: rotate(30deg);
 }
