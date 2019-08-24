@@ -24,7 +24,7 @@ router.get(
   "/auth/google/redirect",
   passport.authenticate("google"),
   (req, res) => {
-    res.redirect("/chooseAllegiance");
+    res.redirect("/allegiance");
   }
 );
 
@@ -72,7 +72,9 @@ router.post("/auth/local", (req, res, next) => {
           if (err) throw err;
           if (isMatch) {
             // res.status(200).json({ success_msg: "You are now logged in!" });
-            passport.authenticate("local", {})(req, res, next);
+            passport.authenticate("local", {
+              successRedirect: "/allegiance"
+            })(req, res, next);
           } else res.status(200).json({ error_msg: "Password incorrect" });
         });
     })
