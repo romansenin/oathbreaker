@@ -54,6 +54,8 @@ app.use(function(err, req, res, next) {
   res.status(500).redirect("/");
 });
 
+app.get("/", (req, res, next) => next()); // put root route through https filter
+
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
