@@ -39,6 +39,11 @@ if (process.env.PORT) {
   app.use(enforce.HTTPS({ trustProtoHeader: true }));
 }
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 // Connect to the Mongo DB
 mongoose
   .connect(process.env.MONGODB_URI || "mongodb://localhost/Project3DB", {
