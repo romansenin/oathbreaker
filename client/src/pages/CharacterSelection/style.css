@@ -8,12 +8,13 @@
   z-index: 20;
   padding: 0;
   width: 100%;
+  overflow-y: scroll;
 }
 
 .character-selection h1 {
   text-align: left;
   font-family: "redivivaregular";
-  letter-spacing: 0.3cm;
+  letter-spacing: 0.25rem;
   margin-top: 8px;
   margin-left: 16px;
   font-weight: 100;
