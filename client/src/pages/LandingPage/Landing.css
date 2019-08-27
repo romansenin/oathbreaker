@@ -19,6 +19,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
+  overflow-y: scroll;
   background: rgba(58, 58, 58, 0.3);
 }
 
@@ -74,7 +75,7 @@ body {
 }
 
 .sub-title {
-  padding: 400px 0 0 20px;
+  padding: 350px 0 0 0px;
   font-family: "berserk";
   font-weight: 50;
   color: #fff;
@@ -84,7 +85,7 @@ body {
 }
 
 .summary {
-  margin: 0 150px 0 150px;
+  /* margin: 0 150px 0 150px; */
   align-content: center;
   font-family: "metror";
   font-weight: 200;
@@ -93,7 +94,7 @@ body {
   text-transform: capitalize;
   letter-spacing: 2px;
 }
-.container {
+.land-container {
   width: 100%;
   height: 100%;
 }
@@ -113,7 +114,7 @@ body {
 .git {
   display: block;
   padding-bottom: 40px;
-  position: absolute;
+  /* position: absolute; */
   bottom: 8px;
   left: 30px;
   width: 70px;
@@ -123,7 +124,7 @@ body {
 .insta {
   display: block;
   padding-bottom: 40px;
-  position: absolute;
+  /* position: absolute; */
   bottom: 8px;
   left: 80px;
   width: 70px;
@@ -133,7 +134,7 @@ body {
 .rating {
   display: block;
   padding-bottom: 40px;
-  position: absolute;
+  /* position: absolute; */
   bottom: 8px;
   right: 30px;
   width: 100px;
