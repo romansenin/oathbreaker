@@ -17,6 +17,12 @@ const authRoutes = require("./routes/authRoutes");
 const apiRoutes = require("./routes/apiRoutes");
 
 // Define middleware here
+
+// Define middleware here
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
@@ -53,8 +59,6 @@ app.use(function(err, req, res, next) {
   req.logout();
   res.status(500).redirect("/");
 });
-
-app.get("*", (req, res, next) => next()); // put root route through https filter
 
 // Send every other request to the React app
 // Define any API routes before this runs
