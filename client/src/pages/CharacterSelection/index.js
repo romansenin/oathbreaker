@@ -17,6 +17,8 @@ export default class CharacterSelection extends Component {
     if (!this.props.user) return <Redirect to="/login" />;
     if (this.props.allegiance === undefined)
       return <Redirect to="/allegiance" />;
+    console.log(this.props.allegiance);
+    console.log(this.state.characters);
     return (
       <div className="character-selection">
         <Navbar user={this.props.user} view="character"/>
