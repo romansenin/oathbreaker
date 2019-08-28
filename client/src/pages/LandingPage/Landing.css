@@ -6,11 +6,6 @@ body {
   padding: 0;
 }
 
-/* .hero-wrapper {
-  min-height: 100%;
-  background-size: cover;
-} */
-
 .landing-wrapper {
   width: 100%;
   height: 100%;
@@ -172,6 +167,7 @@ body {
   animation: marquee 60s linear infinite;
   overflow-x: hidden;
 }
+
 @keyframes marquee {
   0% {
     transform: translate3d(0, 0, 0);

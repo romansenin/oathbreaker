@@ -20,54 +20,73 @@
 
 .overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
   right: 0;
   height: 100%;
   width: 100%;
-  opacity: 0;
-  transition: 2s ease;
-  background: rgba(58, 58, 58, 0.5);
+  background: rgba(58, 58, 58, 0.1);
 }
 
-.container:hover .overlay {
-  opacity: 1;
+#one,
+#two {
+  color: #fff;
+  font-size: 33px;
+  letter-spacing: 3px;
 }
 
 #one {
-  padding: 40px 0 0 40px;
-  color: white;
   font-family: "ace";
-  font-size: 45px;
-  letter-spacing: 3px;
-  position: absolute;
-  top: -25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
 }
 
 #two {
-  padding: 40px 0 0 40px;
-  color: white;
   font-family: "berserk";
-  font-size: 45px;
-  letter-spacing: 3px;
-  position: absolute;
-  top: -25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
 }
+
+#one,
+#two,
 .text {
-  padding: 60px 0 0 20px;
-  color: white;
+  opacity: 0.9;
+}
+
+.text {
+  color: #fff;
   font-family: "metror";
-  font-size: 25px;
+  font-size: 23px;
   letter-spacing: 1px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 768px) {
+  #one,
+  #two {
+    font-size: 40px;
+  }
+
+  .text {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .overlay {
+    opacity: 0;
+    transition: 2s ease;
+    background: rgba(58, 58, 58, 0.5);
+  }
+
+  .container:hover .overlay {
+    opacity: 1;
+  }
+
+  #one,
+  #two {
+    font-size: 45px;
+  }
+
+  .text {
+    font-size: 32px;
+  }
 }

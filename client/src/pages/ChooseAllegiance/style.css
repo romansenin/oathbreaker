@@ -1,30 +1,14 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
 .choose-allegiance {
-  position: absolute;
-  display: flex;
-  width: 100%;
-  /* min-height: 100%; */
-  overflow-y: hidden;
-}
-
-.alliance {
-  flex: 1;
-  min-height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  overflow-y: hidden;
+  max-height: 100vh;
 }
 
 .alliance-container {
-  flex: 1;
   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1s; /* Firefox < 16 */
   -ms-animation: fadein 1s; /* Internet Explorer */
   -o-animation: fadein 1s; /* Opera < 12.1 */
   animation: fadein 1s;
+  max-height: 50vh;
 }
 
 .choose-allegiance #alliance0 {
@@ -32,16 +16,17 @@ body {
     no-repeat;
   background-size: cover;
   transition: transform 0.5s;
+  max-height: 50vh;
 }
 
-.choose-allegiance #alliance0:hover {
+.choose-allegiance #alliance0:active {
   transform: scale(1.15);
 }
 
 .rain {
   height: 100vh;
   background: url("../../images/rain.png");
-  animation: rain 0.3s linear infinite;
+  animation: rain 0.4s linear infinite;
 }
 
 .choose-allegiance #alliance1 {
@@ -49,11 +34,13 @@ body {
   background-size: cover;
   overflow-x: hidden;
   max-width: 100%;
+  max-height: 50vh;
+  min-width: 100%;
 }
 
-.fog-wrapper {
+.fog-wrapper-alliance {
   position: relative;
-  height: 100vh;
+  height: 50vh;
   width: 100%;
   background: #fff;
   overflow-x: hidden;
@@ -61,17 +48,24 @@ body {
   overflow-y: hidden;
 }
 
+.fog-img-alliance {
+  position: absolute;
+  height: 50vh;
+  width: 300vw;
+  pointer-events: none;
+}
+
 .fog-alliance {
   position: absolute;
-  height: 100vh;
-  width: 50vw;
+  height: 50vh;
+  width: 100vw;
   overflow-x: hidden;
   overflow-x: hidden;
   max-width: 100%;
   transition: transform 0.5s;
 }
 
-.fog-alliance:hover {
+.fog-alliance:active {
   transform: scale(1.15);
 }
 
@@ -89,6 +83,51 @@ body {
   background-size: contain;
   background-position: center;
   animation: marquee 60s linear infinite;
+}
+
+@media screen and (min-width: 1024px) {
+  .choose-allegiance {
+    display: flex;
+  }
+
+  .alliance-container {
+    flex: 1;
+    max-height: 100vh;
+  }
+
+  .choose-allegiance #alliance0 {
+    max-height: 100vh;
+  }
+
+  .choose-allegiance #alliance0:hover {
+    transform: scale(1.15);
+  }
+
+  .rain {
+    animation: rain 0.3s linear infinite;
+  }
+
+  .choose-allegiance #alliance1 {
+    max-width: 100%;
+    max-height: 100vh;
+  }
+
+  .fog-wrapper-alliance {
+    height: 100vh;
+  }
+
+  .fog-img-alliance {
+    height: 100vh;
+  }
+
+  .fog-alliance {
+    height: 100vh;
+    width: 50vw;
+  }
+
+  .fog-alliance:hover {
+    transform: scale(1.15);
+  }
 }
 
 @keyframes marquee {

@@ -21,7 +21,7 @@ class Alliance extends Component {
     }
     return (
       <div className="alliance-container">
-        <section className="fog-wrapper">
+        <section className="fog-wrapper-alliance">
           <div className="fog-container" />
           <div
             id={"alliance" + this.props.type}
@@ -51,8 +51,8 @@ class Alliance extends Component {
               )}
             </div>
           </div>
-          <div className="fog-img alliance-fog-1" />
-          <div className="fog-img alliance-fog-2" />
+          <div className="fog-img-alliance alliance-fog-1" />
+          <div className="fog-img-alliance alliance-fog-2" />
         </section>
       </div>
     );
