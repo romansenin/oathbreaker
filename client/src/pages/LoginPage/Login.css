@@ -37,7 +37,6 @@
 
 .form-container .local-login {
   margin-bottom: 10px;
-  padding-bottom: 10px;
 }
 
 .switch-page {
@@ -63,9 +62,13 @@
   content: none;
 }
 
+.switch-page {
+  border-bottom: 1px solid rgb(171, 171, 171);
+  padding-bottom: 10px;
+}
+
 .switch-page p {
   margin: 0;
-  border-bottom: 1px solid rgb(171, 171, 171);
 }
 
 .switch-page a {
@@ -125,6 +128,6 @@
 
 @media screen and (min-width: 1300px) {
   .login-container {
-    width: 1140px;
+    width: 1000px;
   }
 }
