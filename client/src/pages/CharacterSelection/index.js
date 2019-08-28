@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Redirect } from "react-router-dom";
 
 import Navbar from "../../components/Navbar";
@@ -7,25 +7,17 @@ import characters from "../../characters";
 
 import "./style.css";
 
-export default class CharacterSelection extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {characters};
-  }
-
-  render() {
-    if (!this.props.user) return <Redirect to="/login" />;
-    if (this.props.allegiance === undefined)
-      return <Redirect to="/allegiance" />;
-    console.log(this.props.allegiance);
-    console.log(this.state.characters);
-    return (
+const CharacterSelection = props => {
+  if (!props.user) return <Redirect to="/login" />;
+  if (props.allegiance === undefined) return <Redirect to="/allegiance" />;
+  return (
+    <>
+      <Navbar user={props.user} view="character" />
       <div className="character-selection">
-        <Navbar user={this.props.user} view="character"/>
         <h1>Choose Character</h1>
         <ul>
-          {this.state.characters.map((value, index) => {
-            return value.faction === this.props.allegiance ? (
+          {characters.map((value, index) => {
+            return value.faction === props.allegiance ? (
               <Character
                 key={index}
                 id={value.id}
@@ -35,7 +27,7 @@ export default class CharacterSelection extends Component {
                 attack={value.attack}
                 defense={value.defense}
                 agility={value.agility}
-                clicked={this.props.clicked}
+                clicked={props.clicked}
               />
             ) : (
               ""
@@ -43,6 +35,8 @@ export default class CharacterSelection extends Component {
           })}
         </ul>
       </div>
-    );
-  }
-}
+    </>
+  );
+};
+
+export default CharacterSelection;

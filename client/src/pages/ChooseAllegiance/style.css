@@ -26,7 +26,7 @@
 .rain {
   height: 100vh;
   background: url("../../images/rain.png");
-  animation: rain 0.4s linear infinite;
+  animation: rain 0.3s linear infinite;
 }
 
 .choose-allegiance #alliance1 {
@@ -101,10 +101,6 @@
 
   .choose-allegiance #alliance0:hover {
     transform: scale(1.15);
-  }
-
-  .rain {
-    animation: rain 0.3s linear infinite;
   }
 
   .choose-allegiance #alliance1 {
