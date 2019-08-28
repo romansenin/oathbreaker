@@ -1,22 +1,40 @@
-.signup {
+.signup-container {
+  width: 70%;
   position: absolute;
-  width: 1140px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Roboto', sans-serif;
-  z-index: 10;
 }
 
 .form-container .local-signup {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  justify-content: center;
   align-items: center;
 }
 
-.form-container .signup-form {
-  width: 60%;
-  padding: 25px 20px;
+.form-container .signup-form .main {
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .signup-container {
+    width: 600px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .signup-container {
+    width: 800px;
+  }
+
+  .form-container form h1 {
+    font-size: 140%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .signup-container {
+    width: 900px;
+  }
 }
