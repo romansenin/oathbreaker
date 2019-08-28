@@ -16,8 +16,9 @@ export default class LandingPage extends Component {
   }
   render() {
     return (
+      <>
       <div className="landing-wrapper">
-        <div className="container">
+        <div className="container land-container">
           <div className="light">
             <div className="flare one">
               <div className="flare two">
@@ -40,28 +41,33 @@ export default class LandingPage extends Component {
           <Link to="/allegiance" className="btn btn--border">
             Join The Fight <span />
           </Link>
-        </div>
-        <div>
-          {/* Logo is an actual React component */} <Logo className="rating" />
-        </div>
+          <div className="container">
+            <div className="row mt-5 d-flex justify-content-between">
+              
+              <div className="d-flex justify-content-start">
+                {/* Git is an actual React component */}
+                <a href="https://github.com/romansenin/group-project-3">
+                  <Git className="git" />
+                </a>
+                {/* Insta is an actual React component */}
+                <a href="https://www.instagram.com/oathbreakergame/">
+                  <Insta className="insta" />
+                </a>
+              </div>
 
-        <div>
-          {/* Git is an actual React component */}
-          <a href="https://github.com/romansenin/group-project-3">
-            <Git className="git" />
-          </a>
-        </div>
+              
+              <div>
+                {/* Logo is an actual React component */} <Logo className="rating" />
+              </div>
+            </div>
+          </div>
+        
 
-        <div>
-          {/* Insta is an actual React component */}
-          <a href="https://www.instagram.com/oathbreakergame/">
-            <Insta className="insta" />
-          </a>
+        
         </div>
-
-        <Quote />
-        <Story />
+      
       </div>
+      </>
     );
   }
 }
