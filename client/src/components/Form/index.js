@@ -259,12 +259,12 @@ class Form extends Component {
                 {this.props.view === "login" ? "Log In" : "Sign Up"}
               </button>
               {this.props.view === "login" ? (
-                <div className="keep-logged-in">
+                <div className="switch-page">
                   <p>Need an account?</p>
                   <Link to="/signup">Sign Up</Link>
                 </div>
               ) : (
-                <div className="keep-logged-in">
+                <div className="switch-page">
                   <p>Already have an account?</p>
                   <Link to="/login">Log In</Link>
                 </div>
