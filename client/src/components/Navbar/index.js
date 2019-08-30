@@ -25,20 +25,16 @@ const Navbar = props => {
       </div>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav ml-auto">
-          {props.view === "character" ? (
-            <li className="nav-item hide-desktop">
-              <NavLink
-                exact
-                to="/allegiance"
-                className="nav-link"
-                activeClassName="active"
-              >
-                Choose Allegiance
-              </NavLink>
-            </li>
-          ) : (
-            ""
-          )}
+          <li className="nav-item hide-desktop">
+            <NavLink
+              exact
+              to="/allegiance"
+              className="nav-link"
+              activeClassName="active"
+            >
+              Choose Allegiance
+            </NavLink>
+          </li>
 
           <li className="nav-item hide-desktop">
             <NavLink
@@ -65,16 +61,10 @@ const Navbar = props => {
               className="dropdown-menu dropdown-menu-right"
               aria-labelledby="navbarDropdown"
             >
-              {props.view === "character" ? (
-                <>
-                  <Link className="dropdown-item" to="/allegiance">
-                    Choose Allegiance
-                  </Link>
-                  <div className="dropdown-divider" />
-                </>
-              ) : (
-                ""
-              )}
+              <Link className="dropdown-item" to="/allegiance">
+                Choose Allegiance
+              </Link>
+              <div className="dropdown-divider" />
 
               <a className="dropdown-item" href="/auth/logout">
                 Logout

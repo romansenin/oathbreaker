@@ -1,5 +1,5 @@
 .login-container {
-  width: 320px;
+  width: 80%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -37,14 +37,6 @@
 
 .form-container .local-login {
   margin-bottom: 10px;
-  padding-bottom: 10px;
-}
-
-.switch-page {
-  font-size: 90%;
-  display: flex;
-  align-items: center;
-  padding-top: 10px;
 }
 
 .form-container form input {
@@ -60,12 +52,19 @@
   font-style: italic;
   font-size: 90%;
   padding-left: 8px;
-  content: none;
+}
+
+.switch-page {
+  font-size: 90%;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  border-bottom: 1px solid rgb(171, 171, 171);
+  padding-bottom: 10px;
 }
 
 .switch-page p {
   margin: 0;
-  border-bottom: 1px solid rgb(171, 171, 171);
 }
 
 .switch-page a {
@@ -116,7 +115,6 @@
   }
 
   .form-container .local-login {
-    border-bottom: 0;
     border-right: 1px solid rgb(171, 171, 171);
     padding-right: 20px;
     margin: 0;
@@ -125,6 +123,12 @@
 
 @media screen and (min-width: 1300px) {
   .login-container {
-    width: 1140px;
+    width: 900px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .switch-page p {
+    flex: 0.9;
   }
 }

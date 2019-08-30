@@ -1,7 +1,6 @@
 .char-box {
   border: solid 2px black;
   height: 500px;
-  /* opacity: 0.75; */
   z-index: 0;
 }
 

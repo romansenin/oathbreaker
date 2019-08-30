@@ -4,7 +4,7 @@ import Form from "../../components/Form";
 
 const SignUp = () => {
   return (
-    <div className="signup">
+    <div className="signup-container">
       <Form view="signup" />
     </div>
   );
