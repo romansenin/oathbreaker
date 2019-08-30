@@ -15,7 +15,7 @@ OathBreaker is a fantasy medieval-themed fighting game. Users can signup/login b
 
 OathBreaker is powered by the MERN (MongoDB, Express, React, Node) tech stack. The mongoose npm package handles database transactions, mainly for user authentication.
 
-React Routes is used to handle component rendering based on the state of the application.
+React Router is used to handle component rendering based on the state of the application.
 
 ## Factions
 
