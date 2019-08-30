@@ -1,31 +1,28 @@
-# group-project-3
+# OathBreaker
 
-# Create React Express App
+[Deployed Project](https://oathbreaker.herokuapp.com/)
 
-## About This Boilerplate
+### Contributors
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+- Roman Senin
+- Phillip Booker
+- Loren Brown
+- Paige Smith
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+## Project Description
 
-## Starting the app locally
+OathBreaker is a fantasy medieval-themed fighting game. Users can signup/login by creating an account or using Google. 
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+OathBreaker is powered by the MERN (MongoDB, Express, React, Node) tech stack. The mongoose npm package handles database transactions, mainly for user authentication.
 
-```
-npm install
-```
+React Routes is used to handle component rendering based on the state of the application.
 
-This should install node modules within the server and the client folder.
+## Factions
 
-After both installations complete, run the following command in your terminal:
+OathBreaker has two factions - The Triumvate which is represented by the element of water and The Vjarr which is represented by the element of fire.
 
-```
-npm start
-```
+The user has the option to select between the two, and can at any time choose to switch to the other faction (hence the name OathBreaker).
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+#### Technologies
 
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+MongoDB, Express, React, Node, CSS3, & Passport
