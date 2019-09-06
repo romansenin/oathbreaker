@@ -1,5 +1,7 @@
 # OathBreaker
 
+![Splash Page](./media/oathbreaker.png)
+
 [Deployed Project](https://oathbreaker.herokuapp.com/)
 
 ## Project Description
