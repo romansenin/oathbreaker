@@ -10,15 +10,33 @@
 
 OathBreaker is a fantasy medieval-themed fighting game. Users can signup/login by creating an account or using Google.
 
-OathBreaker is powered by the MERN (MongoDB, Express, React, Node) tech stack. The mongoose npm package handles database transactions, mainly for user authentication. React Router is used to handle component rendering based on the state of the application.
+![Login Page](./media/login.png)
 
-### Factions
+A local login account has been created for your convenience should you opt for the local login method:
 
----
+```
+email: test@example.com
+password: test123
+```
 
-OathBreaker has two factions - The Triumvate which is represented by the element of water and The Vjarr which is represented by the element of fire.
+Once you are logged in, you will be presented with the faction page:
 
-After the user logs in. they have the option to select between the two, and can at any time choose to switch to the other faction (hence the name OathBreaker). Once a faction has been selected, the user is then presented with characters withinin their respective faction that they can choose to fight as against a randomly-selected character from the opposing faction.
+![Allegiance Selection](./media/allegiance.png)
+
+OathBreaker has two factions - The Triumvate which is represented by the element of water (left) and The Vjarr which is represented by the element of fire (right).
+
+You will always have a chance to switch your faction at any point during the game (hence the name OathBreaker). This can be done with the navbar on the next page:
+
+![Switch Faction](./media/switch-faction.png)
+
+Once a faction has been selected, you are then presented with characters belonging to your particular faction and can choose any one of them as your character to fight against a randomly selected character from the opposing faction.
+
+![Character Selection](./media/character.png)
+
+Upon selecting your character, the battle begins!
+
+![Battle Page](./media/battle.gif)
+
 
 ### Contributors
 
