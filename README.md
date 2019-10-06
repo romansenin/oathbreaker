@@ -6,8 +6,6 @@
 
 ## Project Description
 
----
-
 OathBreaker is a fantasy medieval-themed fighting game. Users can signup/login by creating an account or using Google.
 
 ![Login Page](./media/login-min.png)
@@ -40,15 +38,11 @@ Upon selecting your character, the battle begins!
 
 ### Contributors
 
----
-
 - [Roman Senin](https://github.com/romansenin)
 - [Phillip Booker](https://github.com/phillipbooker)
 - [Loren Brown](https://github.com/viveleloren)
 - [Paige Smith](https://github.com/paigesmith3794)
 
 #### Technologies
-
----
 
 MongoDB, Express, React, Node, CSS3, & Passport
