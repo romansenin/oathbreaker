@@ -37,12 +37,22 @@ Upon selecting your character, the battle begins!
 
 <img src="./media/battle.gif" width="100%" style="height: auto;">
 
-### Local Setup
-1. Git clone or download zip folder
-1. Run `npm install` at the root folder
-1. Run `mongod` to activate local MongoDB connection
+### Local Setup (NOTE: must have your own Google project setup)
+1. Git clone or download zip folder.
+1. Within the `/oathbreaker` directory run `npm install`.
+1. Create a `.env` file and paste the following lines:
+    ```
+    googleClientID=[insert your client id]
+    googleClientSecret=[insert your client secret]
+    cookieKey=whateveryouwant
+    ```
+    After inserting your project information make sure there are no brackets or spaces.
+1. Add `http://localhost:3001/auth/google/redirect` to your project's list of authorized redirect URIs
 1. Run `npm run build` to create a build of the app
-1. Run `node server.js` to start the node server
+1. In a separate terminal run `mongod` to activate local MongoDB connection
+1. Run `node server.js` to start the node server<br />You should see something like this:
+
+    ![Running node server](./media/node-server.png)
 1. Finally, check out [http://localhost:3001](http://localhost:3001)
 
 VOILA, you're running the app locally!
