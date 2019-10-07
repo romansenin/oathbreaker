@@ -2,7 +2,7 @@
 
 ![Splash Page](./media/oathbreaker-min.png)
 
-[Deployed Project](https://oathbreaker.herokuapp.com/)
+[Go to App](https://oathbreaker.herokuapp.com/)
 
 ## Project Description
 
@@ -33,7 +33,19 @@ Once a faction has been selected, you are then presented with characters belongi
 
 Upon selecting your character, the battle begins!
 
-![Battle Page](./media/battle.gif)
+<!-- ![Battle Page](./media/battle.gif) -->
+
+<img src="./media/battle.gif" width="100%" style="height: auto;">
+
+### Local Setup
+1. Git clone or download zip folder
+1. Run `npm install` at the root folder
+1. Run `mongod` to activate local MongoDB connection
+1. Run `npm run build` to create a build of the app
+1. Run `node server.js` to start the node server
+1. Finally, check out [http://localhost:3001](http://localhost:3001)
+
+VOILA, you're running the app locally!
 
 
 ### Contributors
