@@ -30,10 +30,7 @@
     "passport": "^0.4.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
-    "react-bootstrap": "^1.0.0-beta.11",
     "react-fontawesome": "^1.6.1",
-    "react-native": "^0.60.5",
-    "react-native-sound": "^0.11.0",
     "react-router-dom": "^5.0.1"
   }
 }
