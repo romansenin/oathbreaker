@@ -33,8 +33,6 @@ Once a faction has been selected, you are then presented with characters belongi
 
 Upon selecting your character, the battle begins!
 
-<!-- ![Battle Page](./media/battle.gif) -->
-
 <img src="./media/battle.gif" width="100%" style="height: auto;">
 
 ### Local Setup (NOTE: must have your own Google project setup)
